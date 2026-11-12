@@ -1,0 +1,899 @@
+[
+  {
+    "id": "independence-palace",
+    "name_en": "Independence Palace (Reunification Palace)",
+    "name_vi": "Dinh Độc Lập",
+    "categories": [
+      "history",
+      "architecture",
+      "museum"
+    ],
+    "description_en": "Historic palace and visitor site in central Ho Chi Minh City.",
+    "address_vi": "135 Nam Kỳ Khởi Nghĩa, Phường Bến Thành, TP. Hồ Chí Minh (second gate: 106 Nguyễn Du)",
+    "address_en": "135 Nam Ky Khoi Nghia, Ben Thanh Ward, Ho Chi Minh City (second gate: 106 Nguyen Du)",
+    "area": "Ben Thanh Ward (per official page)",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ],
+      "tue": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ],
+      "wed": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ],
+      "thu": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ],
+      "fri": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ],
+      "sat": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ],
+      "sun": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ]
+    },
+    "hours_confidence": "high",
+    "hours_note": "Monday to Sunday 07:00-18:00, including public holidays and Tet unless a special notice is issued (official page).",
+    "typical_visit_minutes": null,
+    "cost_level": "low",
+    "ticket_adult_vnd": 80000,
+    "ticket_note": "Official page lists: adults 80,000 VND; students and seniors 40,000 VND; children 6 to under 16: 20,000 VND. No separate foreigner price is listed. Online tickets: ticket.dinhdoclap.gov.vn/din010. The page itself is undated. Note: a 2026 VnExpress guide still shows older, lower prices, so trust the official page and re-check.",
+    "evening_friendly": false,
+    "mobility_note": null,
+    "data_status": "ready",
+    "status_note": "Hours and prices taken from the official site (page undated).",
+    "source_urls": [
+      "https://dinhdoclap.gov.vn/"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "hcmc-museum",
+    "name_en": "Museum of Ho Chi Minh City",
+    "name_vi": "Bảo tàng Thành phố Hồ Chí Minh",
+    "categories": [
+      "history",
+      "museum",
+      "architecture"
+    ],
+    "description_en": "City museum in a historic building in central Ho Chi Minh City.",
+    "address_vi": "65 Lý Tự Trọng, Phường Sài Gòn, TP. Hồ Chí Minh",
+    "address_en": "65 Ly Tu Trong, Saigon Ward, Ho Chi Minh City",
+    "area": "Saigon Ward (per official site)",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ]
+    },
+    "hours_confidence": "medium",
+    "hours_note": "The museum's Tet 2026 notice (2026-02-09) states 08:00-17:00 but does not say which days are regular or closed. The 'Opening hour' page on the site had no content. Confirm closed days with the museum (028 3829 9741).",
+    "typical_visit_minutes": null,
+    "cost_level": "low",
+    "ticket_adult_vnd": 60000,
+    "ticket_note": "Official notice dated 2026-09-28: 60,000 VND per person per visit from 2026-10-01, one rate for all visitors. From 2026-10-01 the adult fee is 60,000 VND per person per visit for domestic and international visitors (HCMC People's Council resolution, as reported by Tuoi Tre on 2026-10-11). Free for children, students, people with severe disabilities and poor/near-poor households; 50% off for the elderly, people with disabilities and some other groups. Bring a citizen ID or other proof.",
+    "evening_friendly": false,
+    "mobility_note": null,
+    "data_status": "partial",
+    "status_note": "Fee verified on an official notice; hours verified but closed days unknown.",
+    "source_urls": [
+      "https://hcmc-museum.edu.vn/en/luu-tru/5485",
+      "https://hcmc-museum.edu.vn/luu-tru/5273",
+      "https://hcmc-museum.edu.vn/?p=2578",
+      "https://tuoitre.vn/bao-tang-o-tphcm-hut-hoc-sinh-sinh-vien-sau-khi-mien-phi-tham-quan-100261011134439934.htm"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "war-remnants-museum",
+    "name_en": "War Remnants Museum",
+    "name_vi": "Bảo tàng Chứng tích Chiến tranh",
+    "categories": [
+      "history",
+      "museum"
+    ],
+    "description_en": "Museum about the Vietnam War, with online ticket booking.",
+    "address_vi": "28 Võ Văn Tần, Phường Xuân Hòa, TP. Hồ Chí Minh",
+    "address_en": "28 Vo Van Tan, Xuan Hoa Ward, Ho Chi Minh City",
+    "area": "Xuan Hoa Ward (per Feb 2026 press)",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "07:30",
+          "17:30"
+        ]
+      ],
+      "tue": [
+        [
+          "07:30",
+          "17:30"
+        ]
+      ],
+      "wed": [
+        [
+          "07:30",
+          "17:30"
+        ]
+      ],
+      "thu": [
+        [
+          "07:30",
+          "17:30"
+        ]
+      ],
+      "fri": [
+        [
+          "07:30",
+          "17:30"
+        ]
+      ],
+      "sat": [
+        [
+          "07:30",
+          "17:30"
+        ]
+      ],
+      "sun": [
+        [
+          "07:30",
+          "17:30"
+        ]
+      ]
+    },
+    "hours_confidence": "medium",
+    "hours_note": "Daily 07:30-17:30; ticket counter closes 17:00 (Sai Gon Giai Phong 2026-02-10 and Tuoi Tre 2026-02-12). CONFLICT: a VnExpress guide (updated 2026-04-30) lists Mon-Fri 07:30-11:30 and Sat-Sun 07:30-16:30, which looks outdated. The official site could not be read automatically, so confirm on baotangchungtichchientranh.vn.",
+    "typical_visit_minutes": null,
+    "cost_level": "low",
+    "ticket_adult_vnd": 60000,
+    "ticket_note": "60,000 VND from 2026-10-01 (it was 40,000 VND in Feb 2026). From 2026-10-01 the adult fee is 60,000 VND per person per visit for domestic and international visitors (HCMC People's Council resolution, as reported by Tuoi Tre on 2026-10-11). Free for children, students, people with severe disabilities and poor/near-poor households; 50% off for the elderly, people with disabilities and some other groups. Bring a citizen ID or other proof. Online booking with a chosen visit time and QR code since 2026-02-10 (ticket.baotangchungtichchientranh.vn).",
+    "evening_friendly": false,
+    "mobility_note": null,
+    "data_status": "partial",
+    "status_note": "Hours confirmed by two news reports but not by the official site, and one guide conflicts.",
+    "source_urls": [
+      "https://www.sggp.org.vn/bao-tang-chung-tich-chien-tranh-van-hanh-he-thong-ban-ve-truc-tuyen-post838106.html",
+      "https://tuoitre.vn/bao-tang-dong-khach-nhat-tp-hcm-cho-dat-ve-truoc-khong-con-xep-hang-cho-doi-20260212054209262.htm",
+      "https://tuoitre.vn/bao-tang-o-tphcm-hut-hoc-sinh-sinh-vien-sau-khi-mien-phi-tham-quan-100261011134439934.htm",
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "hcmc-history-museum",
+    "name_en": "Museum of Vietnamese History in Ho Chi Minh City",
+    "name_vi": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh",
+    "categories": [
+      "history",
+      "museum"
+    ],
+    "description_en": "History museum next to the Saigon Zoo and Botanical Gardens.",
+    "address_vi": "2 Nguyễn Bỉnh Khiêm, TP. Hồ Chí Minh",
+    "address_en": "2 Nguyen Binh Khiem, Ho Chi Minh City",
+    "area": "Ward name differs between sources (Ben Nghe / Saigon); verify",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "08:00",
+          "11:30"
+        ],
+        [
+          "13:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "08:00",
+          "11:30"
+        ],
+        [
+          "13:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "08:00",
+          "11:30"
+        ],
+        [
+          "13:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "08:00",
+          "11:30"
+        ],
+        [
+          "13:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "08:00",
+          "11:30"
+        ],
+        [
+          "13:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "08:00",
+          "11:30"
+        ],
+        [
+          "13:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "08:00",
+          "11:30"
+        ],
+        [
+          "13:00",
+          "17:00"
+        ]
+      ]
+    },
+    "hours_confidence": "medium",
+    "hours_note": "08:00-11:30 and 13:00-17:00 per the national tourism database and a 2026 VnExpress guide; closed days are not stated. Its official site blocks automated reading, so confirm on baotanglichsu.vn.",
+    "typical_visit_minutes": null,
+    "cost_level": "low",
+    "ticket_adult_vnd": 60000,
+    "ticket_note": "60,000 VND from 2026-10-01 (30,000 VND before). From 2026-10-01 the adult fee is 60,000 VND per person per visit for domestic and international visitors (HCMC People's Council resolution, as reported by Tuoi Tre on 2026-10-11). Free for children, students, people with severe disabilities and poor/near-poor households; 50% off for the elderly, people with disabilities and some other groups. Bring a citizen ID or other proof.",
+    "evening_friendly": false,
+    "mobility_note": null,
+    "data_status": "partial",
+    "status_note": "Hours from a government tourism database and press; price from press on the 2026 resolution.",
+    "source_urls": [
+      "https://csdl.vietnamtourism.gov.vn/dest/?item=591",
+      "https://vnexpress.net/cam-nang-du-lich-cac-diem-den-lich-su-o-tp-hcm-5068174.html",
+      "https://tuoitre.vn/bao-tang-o-tphcm-hut-hoc-sinh-sinh-vien-sau-khi-mien-phi-tham-quan-100261011134439934.htm"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "hcmc-fine-arts-museum",
+    "name_en": "Ho Chi Minh City Museum of Fine Arts",
+    "name_vi": "Bảo tàng Mỹ thuật Thành phố Hồ Chí Minh",
+    "categories": [
+      "culture",
+      "museum",
+      "architecture"
+    ],
+    "description_en": "Fine arts museum in central Ho Chi Minh City.",
+    "address_vi": "97A Phó Đức Chính, TP. Hồ Chí Minh",
+    "address_en": "97A Pho Duc Chinh, Ho Chi Minh City",
+    "area": "Ward not verified",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "08:00",
+          "17:00"
+        ]
+      ],
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": "low",
+    "hours_note": "A VnExpress guide lists 08:00-17:00 on weekdays only; weekend hours are not stated. The museum's site blocks automated reading. Confirm on the museum's own channels.",
+    "typical_visit_minutes": null,
+    "cost_level": "low",
+    "ticket_adult_vnd": 60000,
+    "ticket_note": "60,000 VND from 2026-10-01. From 2026-10-01 the adult fee is 60,000 VND per person per visit for domestic and international visitors (HCMC People's Council resolution, as reported by Tuoi Tre on 2026-10-11). Free for children, students, people with severe disabilities and poor/near-poor households; 50% off for the elderly, people with disabilities and some other groups. Bring a citizen ID or other proof.",
+    "evening_friendly": false,
+    "mobility_note": null,
+    "data_status": "partial",
+    "status_note": "Price from press on the 2026 resolution; hours from a secondary guide.",
+    "source_urls": [
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html",
+      "https://tuoitre.vn/bao-tang-o-tphcm-hut-hoc-sinh-sinh-vien-sau-khi-mien-phi-tham-quan-100261011134439934.htm"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "southern-women-museum",
+    "name_en": "Southern Women's Museum",
+    "name_vi": "Bảo tàng Phụ nữ Nam Bộ",
+    "categories": [
+      "culture",
+      "museum"
+    ],
+    "description_en": "Museum about women of southern Vietnam.",
+    "address_vi": null,
+    "address_en": null,
+    "area": null,
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": null,
+      "fri": null,
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": null,
+    "hours_note": "Opening hours not found on any page that could be read.",
+    "typical_visit_minutes": null,
+    "cost_level": "free",
+    "ticket_adult_vnd": 0,
+    "ticket_note": "No admission fee at present, according to Tuoi Tre (2026-10-11) and the city press office (2026-09-30).",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "needs_data",
+    "status_note": "Free admission confirmed; address and hours still to verify.",
+    "source_urls": [
+      "https://tuoitre.vn/bao-tang-o-tphcm-hut-hoc-sinh-sinh-vien-sau-khi-mien-phi-tham-quan-100261011134439934.htm",
+      "https://ttbc-hcm.gov.vn/tp-hcm-mien-ve-tham-quan-bao-tang-cho-hoc-sinh-sinh-vien-tu-1-10-1022256.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "saigon-central-post-office",
+    "name_en": "Saigon Central Post Office",
+    "name_vi": "Bưu điện Trung tâm Sài Gòn",
+    "categories": [
+      "architecture",
+      "history"
+    ],
+    "description_en": "Historic post office building that still provides postal services and welcomes visitors.",
+    "address_vi": "2 Công trường Công xã Paris, TP. Hồ Chí Minh",
+    "address_en": "2 Cong xa Paris Square, Ho Chi Minh City",
+    "area": "Ward not verified",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "07:00",
+          "19:00"
+        ]
+      ],
+      "tue": [
+        [
+          "07:00",
+          "19:00"
+        ]
+      ],
+      "wed": [
+        [
+          "07:00",
+          "19:00"
+        ]
+      ],
+      "thu": [
+        [
+          "07:00",
+          "19:00"
+        ]
+      ],
+      "fri": [
+        [
+          "07:00",
+          "19:00"
+        ]
+      ],
+      "sat": [
+        [
+          "07:00",
+          "18:00"
+        ]
+      ],
+      "sun": [
+        [
+          "08:00",
+          "18:00"
+        ]
+      ]
+    },
+    "hours_confidence": "low",
+    "hours_note": "Hours from a VnExpress guide (published 2025-11-20, updated 2026-04-30): Mon-Fri 07:00-19:00, Sat 07:00-18:00, Sun 08:00-18:00. Not confirmed by Vietnam Post.",
+    "typical_visit_minutes": null,
+    "cost_level": null,
+    "ticket_adult_vnd": null,
+    "ticket_note": "No entrance fee is stated in the sources read; confirm on site.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "partial",
+    "status_note": "Address from a Vietnam Post article; hours from a secondary guide.",
+    "source_urls": [
+      "https://vnpost.vn/en/bai-viet/buu-dien-trung-tam-thanh-pho-ho-chi-minh-mot-diem-den-hap-dan",
+      "https://vnexpress.net/buu-dien-hon-130-tuoi-o-sai-gon-4617139.html",
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "saigon-opera-house",
+    "name_en": "Saigon Opera House (Municipal Theatre)",
+    "name_vi": "Nhà hát Thành phố Hồ Chí Minh",
+    "categories": [
+      "architecture",
+      "culture",
+      "nightlife"
+    ],
+    "description_en": "Historic municipal theatre that hosts performances.",
+    "address_vi": "7 Công trường Lam Sơn, TP. Hồ Chí Minh",
+    "address_en": "7 Lam Son Square, Ho Chi Minh City",
+    "area": "Ward not verified",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "09:00",
+          "16:30"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "16:30"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "16:30"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "16:30"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "16:30"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "12:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "12:00"
+        ]
+      ]
+    },
+    "hours_confidence": "low",
+    "hours_note": "A VnExpress guide lists Mon-Fri 09:00-16:30 and Sat-Sun 09:00-12:00 but does not say whether this is for interior visits, the ticket office or tours. The theatre's site blocks automated reading. Check performance times and visit rules directly.",
+    "typical_visit_minutes": null,
+    "cost_level": null,
+    "ticket_adult_vnd": null,
+    "ticket_note": "Not verified. Performance tickets vary by show.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "needs_data",
+    "status_note": "Address and hours from one secondary guide only; do not schedule until verified.",
+    "source_urls": [
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "notre-dame-cathedral-saigon",
+    "name_en": "Notre-Dame Cathedral Basilica of Saigon",
+    "name_vi": "Nhà thờ Đức Bà Sài Gòn",
+    "categories": [
+      "architecture",
+      "religious",
+      "history"
+    ],
+    "description_en": "Cathedral under long-term restoration; visitors can view it from outside.",
+    "address_vi": "Công xã Paris, TP. Hồ Chí Minh (house number not verified)",
+    "address_en": "Cong xa Paris Street, Ho Chi Minh City (house number not verified)",
+    "area": "Ward not verified",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": null,
+      "fri": null,
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": null,
+    "hours_note": "Thanh Nien (2025-12-11) reports that visitors cannot enter the interior during restoration; the grounds are open for photos and the cathedral is open daily for Mass. A VnExpress guide lists 08:00-11:00 and 14:00-16:00 with a note about the renovation, which conflicts. Restoration was expected to finish in 2027 (VnExpress guide). Status in November 2026 not verified.",
+    "typical_visit_minutes": null,
+    "cost_level": "free",
+    "ticket_adult_vnd": null,
+    "ticket_note": "No fee reported for viewing the exterior. Interior access not available as of the Dec 2025 report.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "exterior_only_verify",
+    "status_note": "Use as an exterior photo stop only until the interior reopens and is confirmed.",
+    "source_urls": [
+      "https://thanhnien.vn/tu-nay-den-giang-sinh-co-duoc-vao-tham-quan-nha-tho-duc-ba-185251209202314287.htm",
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "ho-chi-minh-museum-nha-rong",
+    "name_en": "Ho Chi Minh Museum, Ho Chi Minh City branch (Nha Rong Wharf)",
+    "name_vi": "Bảo tàng Hồ Chí Minh - Chi nhánh TP. Hồ Chí Minh (Bến Nhà Rồng)",
+    "categories": [
+      "history",
+      "museum"
+    ],
+    "description_en": "Museum at the Nha Rong Wharf site, temporarily closed for renovation.",
+    "address_vi": null,
+    "address_en": null,
+    "area": null,
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": null,
+      "fri": null,
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": null,
+    "hours_note": "Closed to visitors since 2026-05-07 for renovation and redevelopment of the Nha Rong - Khanh Hoi area (Nhan Dan / Tuoi Tre, 2026-05-07). Tuoi Tre (2026-08-03) described the site as an active construction site, with a completion target of before 2 September. A reopening date has not been verified.",
+    "typical_visit_minutes": null,
+    "cost_level": "free",
+    "ticket_adult_vnd": 0,
+    "ticket_note": "No admission fee when open, according to Tuoi Tre (2026-10-11).",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "temporarily_closed",
+    "status_note": "Exclude from itineraries until reopening is confirmed.",
+    "source_urls": [
+      "https://nhandan.vn/bao-tang-ho-chi-minh-chi-nhanh-thanh-pho-ho-chi-minh-tam-ngung-phuc-vu-khach-tham-quan-post960697.html",
+      "https://tuoitre.vn/ben-nha-rong-chuyen-bien-sau-3-thang-khoi-cong-tao-da-dot-pha-ha-tang-ven-song-sai-gon-10026080213470448.htm",
+      "https://tuoitre.vn/bao-tang-o-tphcm-hut-hoc-sinh-sinh-vien-sau-khi-mien-phi-tham-quan-100261011134439934.htm"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "saigon-zoo-botanical-gardens",
+    "name_en": "Saigon Zoo and Botanical Gardens",
+    "name_vi": "Thảo Cầm Viên Sài Gòn",
+    "categories": [
+      "park",
+      "local_life"
+    ],
+    "description_en": "Zoo and botanical gardens in central Ho Chi Minh City.",
+    "address_vi": null,
+    "address_en": null,
+    "area": null,
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": null,
+      "fri": null,
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": null,
+    "hours_note": "Opening hours not found on any page that could be read. The zoo's official site blocks automated reading.",
+    "typical_visit_minutes": null,
+    "cost_level": "low",
+    "ticket_adult_vnd": 60000,
+    "ticket_note": "Gate price 60,000 VND for visitors 1.3 m or taller, per Tuoi Tre (2026-02-28). Price may have changed since; confirm.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "needs_data",
+    "status_note": "Gate price reported in Feb 2026; address and hours still to verify.",
+    "source_urls": [
+      "https://tuoitre.vn/thao-cam-vien-sai-gon-bao-tang-ao-dai-giam-gia-ve-cho-khach-mac-ao-dai-20260228195111497.htm"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "saigon-revolutionary-museum",
+    "name_en": "Saigon Special Forces (Biet Dong Sai Gon) Museum",
+    "name_vi": "Bảo tàng Biệt động Sài Gòn",
+    "categories": [
+      "history",
+      "museum"
+    ],
+    "description_en": "Small history museum in central Ho Chi Minh City.",
+    "address_vi": "Tầng 2, đường Trần Quang Khải, TP. Hồ Chí Minh (house number not verified)",
+    "address_en": "2nd floor, Tran Quang Khai Street, Ho Chi Minh City (house number not verified)",
+    "area": "Ward not verified",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "tue": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": "low",
+    "hours_note": "A VnExpress guide (updated 2026-04-30) lists 07:00-22:00 on weekdays and free admission. Weekend hours not stated. 22:00 closing looks unusual for a museum, so verify before using it for evening plans.",
+    "typical_visit_minutes": null,
+    "cost_level": "free",
+    "ticket_adult_vnd": 0,
+    "ticket_note": "Free, per the same guide. Not confirmed by the museum.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "needs_data",
+    "status_note": "Single secondary source; verify everything.",
+    "source_urls": [
+      "https://vnexpress.net/cam-nang-du-lich-cac-diem-den-lich-su-o-tp-hcm-5068174.html",
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "ben-thanh-market",
+    "name_en": "Ben Thanh Market",
+    "name_vi": "Chợ Bến Thành",
+    "categories": [
+      "market",
+      "food",
+      "local_life"
+    ],
+    "description_en": "Central market in District 1 area of Ho Chi Minh City.",
+    "address_vi": null,
+    "address_en": null,
+    "area": "Central Ho Chi Minh City",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": null,
+      "fri": null,
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": null,
+    "hours_note": "No opening hours found in an official or news source that could be read. Check the market management board.",
+    "typical_visit_minutes": null,
+    "cost_level": "free",
+    "ticket_adult_vnd": null,
+    "ticket_note": "No entrance fee is stated; confirm on site.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "needs_data",
+    "status_note": "Identity and general location only.",
+    "source_urls": [
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "binh-tay-market",
+    "name_en": "Binh Tay Market (Cho Lon)",
+    "name_vi": "Chợ Bình Tây",
+    "categories": [
+      "market",
+      "local_life",
+      "culture"
+    ],
+    "description_en": "Market in the Cho Lon (Chinatown) area of Ho Chi Minh City.",
+    "address_vi": null,
+    "address_en": null,
+    "area": "Cho Lon",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": null,
+      "fri": null,
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": null,
+    "hours_note": "No opening hours found in a source that could be read.",
+    "typical_visit_minutes": null,
+    "cost_level": "free",
+    "ticket_adult_vnd": null,
+    "ticket_note": "No entrance fee is stated; confirm on site.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "needs_data",
+    "status_note": "Identity and general location only.",
+    "source_urls": [
+      "https://vnexpress.net/cam-nang-du-lich-tp-hcm-4608205.html"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  },
+  {
+    "id": "thien-hau-temple",
+    "name_en": "Thien Hau Temple (Cho Lon)",
+    "name_vi": "Chùa Bà Thiên Hậu",
+    "categories": [
+      "religious",
+      "culture",
+      "history"
+    ],
+    "description_en": "Temple in Cho Lon associated with the local Chinese-Vietnamese community; annual festival on the 23rd day of the 3rd lunar month.",
+    "address_vi": null,
+    "address_en": null,
+    "area": "Cho Lon",
+    "lat": null,
+    "lng": null,
+    "opening_hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": null,
+      "fri": null,
+      "sat": null,
+      "sun": null
+    },
+    "hours_confidence": null,
+    "hours_note": "Opening hours and address are not given in the national tourism article. Verify on site or with the temple.",
+    "typical_visit_minutes": null,
+    "cost_level": null,
+    "ticket_adult_vnd": null,
+    "ticket_note": "Not verified.",
+    "evening_friendly": null,
+    "mobility_note": null,
+    "data_status": "needs_data",
+    "status_note": "Identity and festival date from a national tourism site; everything else to verify.",
+    "source_urls": [
+      "https://dantoc.vietnamtourism.gov.vn/chua-ba-thien-hau-khong-gian-tin-nguong-va-van-hoa-nguoi-hoa-giua-long-sai-gon/"
+    ],
+    "last_verified": "2026-11-02",
+    "verified_by": "Claude (web check of public pages on 2026-11-02); founder must re-check on site before publishing"
+  }
+]

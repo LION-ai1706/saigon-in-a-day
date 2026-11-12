@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Saigon in a Day – Pitch Deck</title>
+<style>
+@page { size: 1280px 720px; margin: 0; }
+:root { --g:#0b6b4f; --gd:#07402f; --gl:#e3f1ec; --ink:#14212b; --mut:#5b6872; --amb:#b7791f; --ambl:#fdf3e1; --line:#d9e1e5; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, "Liberation Sans", sans-serif; color: var(--ink); background: #fff; }
+.s { width: 1280px; height: 720px; padding: 56px 72px 48px; position: relative; overflow: hidden; page-break-after: always; display: flex; flex-direction: column; }
+.s:last-child { page-break-after: auto; }
+.k { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--g); font-weight: 700; margin-bottom: 10px; }
+h1 { font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: -.01em; margin-bottom: 26px; max-width: 1050px; }
+h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+p, li { font-size: 19px; line-height: 1.45; }
+ul { padding-left: 22px; } li { margin-bottom: 8px; }
+.mut { color: var(--mut); }
+.foot { position: absolute; left: 72px; right: 72px; bottom: 22px; display: flex; justify-content: space-between; font-size: 12.5px; color: var(--mut); }
+.grid { display: grid; gap: 22px; flex: 1; }
+.c2 { grid-template-columns: 1fr 1fr; } .c3 { grid-template-columns: repeat(3,1fr); } .c4 { grid-template-columns: repeat(4,1fr); }
+.card { border: 1.5px solid var(--line); border-radius: 14px; padding: 22px 24px; }
+.card p, .card li { font-size: 17px; }
+.tint { background: var(--gl); border-color: var(--gl); }
+.num { font-size: 46px; font-weight: 800; color: var(--g); line-height: 1; margin-bottom: 8px; }
+.fill { background: var(--ambl); border: 1.5px dashed var(--amb); color: #7a4f0e; border-radius: 6px; padding: 1px 8px; font-weight: 600; white-space: nowrap; }
+.fillbox { background: var(--ambl); border: 1.5px dashed var(--amb); border-radius: 12px; padding: 14px 18px; color: #6b450c; font-size: 16px; line-height: 1.4; }
+.src { font-size: 12.5px; color: var(--mut); margin-top: auto; padding-top: 14px; line-height: 1.4; }
+.step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+.dot { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--g); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.step p { font-size: 18px; }
+table { border-collapse: collapse; width: 100%; font-size: 16px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--mut); }
+.yes { color: var(--g); font-weight: 700; } .no { color: #a33; }
+.tag { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: var(--gl); color: var(--g); margin-bottom: 10px; letter-spacing: .04em; }
+.tag.a { background: var(--ambl); color: #7a4f0e; }
+.phone { width: 230px; border-radius: 22px; border: 6px solid #1d2a33; overflow: hidden; box-shadow: 0 10px 28px rgba(0,0,0,.14); }
+.phone img { display: block; width: 100%; }
+/* title slide */
+.title { background: var(--gd); color: #fff; justify-content: center; }
+.title h1 { font-size: 72px; margin-bottom: 18px; color: #fff; }
+.title .tl { font-size: 28px; color: #bfe3d6; margin-bottom: 8px; }
+.title .vi { font-size: 22px; color: #8cc9b3; margin-bottom: 48px; }
+.title .meta { font-size: 18px; color: #d7ece5; line-height: 1.7; }
+.title .foot { color: #8cc9b3; }
+.badge1d { width: 64px; height: 64px; border-radius: 50%; background: #fff; color: var(--gd); font-weight: 800; font-size: 26px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; }
+.bar { height: 12px; border-radius: 6px; background: var(--line); overflow: hidden; display: flex; }
+.bar span { display: block; height: 100%; }
+</style></head><body>
+
+<!-- 1 TITLE -->
+<section class="s title">
+  <div class="badge1d">1d</div>
+  <h1>Saigon in a Day</h1>
+  <div class="tl">One day in Saigon, planned from official sources.</div>
+  <div class="vi">Một ngày Sài Gòn, đúng nguồn, đúng gu.</div>
+  <div class="meta">A bilingual planning assistant for short-stay international visitors to Ho Chi Minh City<br>
+  Pitch deck for HIST 2026 · Theme: Digital transformation and AI in tourism<br>
+  Lion, founder · <span style="opacity:.8">[contact email / phone]</span></div>
+  <div class="foot"><span>Version 1 · November 2026</span><span>Independent student project. Not affiliated with or endorsed by any government body or venue.</span></div>
+</section>
+
+<!-- 2 PROBLEM -->
+<section class="s">
+  <div class="k">01 · Problem</div>
+  <h1>Short-stay visitors plan their one day in Saigon from scattered, often outdated information</h1>
+  <div class="grid c3" style="flex:0">
+    <div class="card"><h3>Scattered sources</h3><p>Visitors who stay one or two days piece together a route from blogs, social posts and general-purpose AI chatbots.</p></div>
+    <div class="card"><h3>Wrong or outdated details</h3><p>Opening hours, prices and closures change. Chatbots can confidently suggest places that are closed or do not exist.</p></div>
+    <div class="card"><h3>Lost time, same few sites</h3><p>Routes cut across heavy traffic, and visitors default to the same famous landmarks. Smaller museums and local experiences are rarely found.</p></div>
+  </div>
+  <div class="card tint" style="margin-top:22px;flex:0">
+    <p><b>Real examples from our own data research (Nov 2026):</b> the Ho Chi Minh Museum branch at Nhà Rồng has been closed for renovation since 7 May 2026; the Notre-Dame Cathedral interior was reported closed for restoration; and four city museums changed their adult fee to 60,000 VND from 1 October 2026, while older guides still show other hours and prices.</p>
+  </div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>2</span></div>
+</section>
+
+<!-- 3 WHY NOW -->
+<section class="s">
+  <div class="k">02 · Why it matters</div>
+  <h1>The city is growing fast and has made digital tourism a stated priority</h1>
+  <div class="grid c3" style="flex:0">
+    <div class="card"><div class="num">~8.6M</div><p>international visitors to Ho Chi Minh City in 2025, <b>up 40.3%</b></p></div>
+    <div class="card"><div class="num">~46M</div><p>domestic visitors in 2025, up 20%</p></div>
+    <div class="card"><div class="num">US$10.6B</div><p>tourism revenue (VND 278,566 billion), up 45.8%</p></div>
+  </div>
+  <div class="grid c2" style="margin-top:22px;flex:0">
+    <div class="card tint"><h3>City ambition</h3><p>Become Asia's leading creative tourism hub by 2030, focusing on high-value visitors, green tourism and digital tourism.</p></div>
+    <div class="card tint"><h3>What this means for us</h3><p>At this volume, even a small improvement in trip planning can extend stays, spread spending to more sites and strengthen the city's reputation.</p></div>
+  </div>
+  <div class="src">Source: Sai Gon Giai Phong (SGGP), "Ho Chi Minh City welcomes nearly 8.6 million international visitors in 2025", 31 December 2025.</div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>3</span></div>
+</section>
+
+<!-- 4 SOLUTION -->
+<section class="s">
+  <div class="k">03 · Solution</div>
+  <h1>A timed one-day plan built only from places we have verified</h1>
+  <div class="grid c2">
+    <div>
+      <div class="step"><div class="dot">1</div><p><b>Ask.</b> Interests, budget, hotel area, date and time window, mobility, group type, optional evening.</p></div>
+      <div class="step"><div class="dot">2</div><p><b>Select.</b> Draw only from a curated database built from official public sources. Nothing outside it is ever suggested.</p></div>
+      <div class="step"><div class="dot">3</div><p><b>Order.</b> Arrange stops by location, opening hours and travel time into a timed plan with a lunch window.</p></div>
+      <div class="step"><div class="dot">4</div><p><b>Show.</b> English guidance plus Vietnamese names and addresses on a "show to driver" card.</p></div>
+      <div class="step"><div class="dot">5</div><p><b>Correct.</b> Visitors report wrong information; we check and fix the database.</p></div>
+    </div>
+    <div class="card tint">
+      <h3>Trust by design</h3>
+      <ul>
+        <li>Every stop shows its <b>source link</b> and a <b>"last verified" date</b>.</li>
+        <li>Warnings for closed days, renovations and conflicting sources.</li>
+        <li>When we do not have a verified answer, the assistant <b>says so instead of guessing</b>.</li>
+        <li>A deterministic planning engine does the work. An AI layer is optional and is never allowed to add places, prices or hours.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>4</span></div>
+</section>
+
+<!-- 5 PRODUCT -->
+<section class="s">
+  <div class="k">04 · Product</div>
+  <h1>A working mobile-first prototype, built and tested</h1>
+  <div style="display:flex;gap:40px;flex:1;align-items:flex-start">
+    <div style="display:flex;gap:22px">
+      <div class="phone"><img src="home.png"></div>
+      <div class="phone"><img src="place.png"></div>
+    </div>
+    <div style="flex:1">
+      <h3>What is built (prototype v1, November 2026)</h3>
+      <ul>
+        <li>Questionnaire and timed day planner</li>
+        <li>Place pages with sources, verification status and warnings</li>
+        <li>"Show to driver" card with Vietnamese name and address</li>
+        <li>"Report wrong information" button and short anonymous survey</li>
+        <li>Data status page that shows openly what is and is not verified</li>
+        <li>Deterministic planning engine with 10 automated tests</li>
+      </ul>
+      <div class="fillbox" style="margin-top:10px"><b>Honest status:</b> real plans switch on once at least 8 places have verified coordinates and visit times. Until then, the planner says it does not have enough data, and a preview labelled "fictional test data" shows how a full plan looks.<br><b>Demo link:</b> [paste public prototype link after sharing]</div>
+    </div>
+  </div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>5</span></div>
+</section>
+
+<!-- 6 LANDSCAPE -->
+<section class="s">
+  <div class="k">05 · Landscape and advantage</div>
+  <h1>Others present information or generate plans. We plan from verified local data.</h1>
+  <table>
+    <tr><th style="width:26%">Option today</th><th style="width:16%">Timed day plan</th><th style="width:16%">Visible sources and dates</th><th>Limits (from public reports)</th></tr>
+    <tr><td><b>Official channels</b><br><span class="mut" style="font-size:14px">3D/360 tourism map, reported tourism chatbot</span></td><td class="mut">Not observed yet <span class="fill">[test]</span></td><td class="mut">Official content</td><td>Focus on presenting information about sites; planning features not yet tested by us</td></tr>
+    <tr><td><b>Global AI planners and chatbots</b></td><td class="yes">Yes</td><td class="no">No</td><td>Reviews point to accuracy and trust gaps; no verified local database</td></tr>
+    <tr><td><b>Blogs, social, review sites</b></td><td class="no">Partly</td><td class="no">Rarely</td><td>Rich but scattered and often outdated</td></tr>
+    <tr><td><b>Local human guides</b></td><td class="yes">Yes</td><td class="mut">Personal knowledge</td><td>Reliable but costly and fixed in schedule</td></tr>
+    <tr style="background:var(--gl)"><td><b>Saigon in a Day</b></td><td class="yes">Yes</td><td class="yes">Yes, every stop</td><td><b>Hard to copy:</b> the verified local dataset, a correction loop from real visitor feedback, and relationships with sites and hotels built during the pilot</td></tr>
+  </table>
+  <div class="src">Sources: Tuoi Tre News (3D/360 map, Dec 2023); Doanh Nghiep Hoi Nhap (tourism chatbot, Sep 2023); Hospitality Today (AI travel tools reliability, 21 Aug 2025). We will test the official channels with real questions before the screening round and update this slide.</div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>6</span></div>
+</section>
+
+<!-- 7 MARKET -->
+<section class="s">
+  <div class="k">06 · Market</div>
+  <h1>Start with one clear user in one city, then grow through hotels and tour operators</h1>
+  <div class="grid c3">
+    <div class="card tint"><span class="tag">Context</span><div class="num">~8.6M</div><p>international visitors to HCMC in 2025 (SGGP). This is the wider pool, not our addressable market.</p></div>
+    <div class="card"><span class="tag">Beachhead users</span><h3>Independent short-stay visitors</h3><p>First-time international travellers on a one or two-day stay who do not speak Vietnamese.</p><div class="fillbox" style="margin-top:12px">Share of visitors who stay 1–2 days: <b>[find a published source]</b></div></div>
+    <div class="card"><span class="tag">Paying customers</span><h3>Hotels and tour operators</h3><p>Businesses that answer "what should I do today?" for their guests every day.</p><div class="fillbox" style="margin-top:12px">Number of hotels / tour operators in central HCMC: <b>[find a published source]</b></div></div>
+  </div>
+  <div class="card" style="margin-top:22px;flex:0"><p><b>Secondary beneficiaries:</b> museums, cultural sites, small local businesses and evening experiences gain visibility. Later, city tourism bodies could gain anonymised, privacy-respecting insight into visitor interests. <span class="mut">Market sizing will be filled only with sourced figures; we do not estimate without data.</span></p></div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>7</span></div>
+</section>
+
+<!-- 8 BUSINESS MODEL -->
+<section class="s">
+  <div class="k">07 · Business model</div>
+  <h1>Free for travellers. Hotels and tour operators pay.</h1>
+  <div class="grid c4" style="flex:0">
+    <div class="card tint"><span class="tag">Travellers</span><h3>Free</h3><p>The full planner, driver cards and sources at no cost. Trust is the product; no paywall between a visitor and correct information.</p></div>
+    <div class="card"><span class="tag">Main revenue</span><h3>B2B white-label plans</h3><p>Hotels and tour operators offer the planner to guests under their own brand, by QR code at reception or in pre-arrival messages.</p></div>
+    <div class="card"><span class="tag">Secondary</span><h3>Featured listings</h3><p>Verified local businesses can pay for visibility, always <b>clearly labelled</b> as featured and never ranked above the visitor's own needs.</p></div>
+    <div class="card"><span class="tag">Later</span><h3>Anonymised insights</h3><p>Aggregate trends on visitor interests for partners. No personal data collected or sold.</p></div>
+  </div>
+  <div class="grid c2" style="margin-top:22px">
+    <div class="card"><h3>First step: pilot with 3–5 hotels</h3><p>Offer the planner free during the pilot, measure guest use and satisfaction, then agree a paid plan with the hotels that see value.</p></div>
+    <div class="fillbox"><b>Prices to validate in the pilot (assumptions):</b><br>White-label: 1.5M VND per partner per month + 2M setup fee<br>Featured listing: 500k VND per month<br>Pilot hotels confirmed: <b>[0 of 3–5 so far — update]</b></div>
+  </div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>8</span></div>
+</section>
+
+<!-- 9 TRACTION -->
+<section class="s">
+  <div class="k">08 · Traction</div>
+  <h1>Early stage, stated honestly: product built, data started, users next</h1>
+  <div class="grid c4" style="flex:0">
+    <div class="card"><div class="num">1</div><p>working prototype with a tested planning engine</p></div>
+    <div class="card"><div class="num">15</div><p>places researched from official and news sources, with links and dates</p></div>
+    <div class="card"><div class="num">1</div><p>place fully verified so far (Independence Palace); 5 partly verified</p></div>
+    <div class="card"><div class="num">0</div><p>real users or partners yet. The pilot starts next.</p></div>
+  </div>
+  <div style="margin-top:22px">
+    <p class="mut" style="font-size:15px;margin-bottom:6px">Data status of the 15 places (2 Nov 2026)</p>
+    <div class="bar" style="height:22px;border-radius:8px">
+      <span style="width:6.67%;background:var(--g)"></span><span style="width:33.3%;background:#6bb59a"></span><span style="width:46.7%;background:#c9d4d9"></span><span style="width:6.67%;background:#e2b45f"></span><span style="width:6.67%;background:#c97a6b"></span>
+    </div>
+    <p style="font-size:14px;margin-top:6px" class="mut"><span style="color:#0b6b4f">■</span> 1 verified · <span style="color:#6bb59a">■</span> 5 partial · <span style="color:#a9b8bf">■</span> 7 need data · <span style="color:#e2b45f">■</span> 1 exterior only · <span style="color:#c97a6b">■</span> 1 temporarily closed</p>
+  </div>
+  <div class="grid c2" style="margin-top:18px">
+    <div class="fillbox"><b>Pilot results to add (only real numbers):</b><br>Visitors surveyed: <b>[n]</b> · found one-day planning difficult: <b>[x%]</b> · met wrong information online: <b>[y%]</b> · rated our plan realistic: <b>[z%]</b> · NPS: <b>[ ]</b></div>
+    <div class="fillbox"><b>Partner progress to add:</b><br>Hotels contacted / interested / piloting: <b>[ ] / [ ] / [ ]</b><br>Places verified on site: <b>[ ]</b> · Error reports fixed: <b>[ ]</b></div>
+  </div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>9</span></div>
+</section>
+
+<!-- 10 TEAM -->
+<section class="s">
+  <div class="k">09 · Team</div>
+  <h1>A founder who works directly with the target user</h1>
+  <div class="grid c2">
+    <div class="card">
+      <h3>Lion — Founder</h3>
+      <ul>
+        <li>First-year student, Computer Science (AI for Business, honours programme)</li>
+        <li>Coursework in programming, databases, statistics, machine learning, marketing and entrepreneurship</li>
+        <li>Works guiding foreign tourists in English: direct access to the people the product is for, and to on-the-ground checks of places</li>
+        <li>Strong English; learning Chinese (HSK), a future second language for the product</li>
+      </ul>
+      <div class="fillbox" style="margin-top:8px">University name: <b>[ ]</b> · Guiding since: <b>[month/year]</b> · Contact / LinkedIn: <b>[ ]</b></div>
+    </div>
+    <div class="card tint">
+      <h3>How the work gets done</h3>
+      <ul>
+        <li>Product and code built with AI-assisted development, reviewed by the founder</li>
+        <li>Data verified by the founder from official pages and on tours</li>
+        <li>Built in small, fixed weekly blocks alongside study</li>
+      </ul>
+      <h3 style="margin-top:14px">People we are looking for</h3>
+      <div class="fillbox">Co-founder or advisors (e.g. hospitality, tourism, business development): <b>[add names if any, or state "seeking"]</b></div>
+    </div>
+  </div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>10</span></div>
+</section>
+
+<!-- 11 FINANCIALS -->
+<section class="s">
+  <div class="k">10 · Financials</div>
+  <h1>Lean to run. Every figure below is an untested assumption, not a result.</h1>
+  <div class="grid c2" style="grid-template-columns:1.25fr 1fr">
+    <div class="card">
+      <span class="tag a">Base scenario · assumptions · VND, before tax</span>
+      <table style="font-size:15px">
+        <tr><th></th><th>2027</th><th>2028</th><th>2029</th></tr>
+        <tr><td>Paying hotel / tour-operator partners (avg)</td><td>1</td><td>6</td><td>15</td></tr>
+        <tr><td>Labelled featured listings (avg)</td><td>0</td><td>8</td><td>20</td></tr>
+        <tr><td>Anonymised insight reports</td><td>0</td><td>1</td><td>2</td></tr>
+        <tr><td><b>Revenue</b></td><td><b>20M</b></td><td><b>181M</b></td><td><b>528M</b></td></tr>
+        <tr><td><b>Costs</b></td><td><b>4.9M</b></td><td><b>79.5M</b></td><td><b>326.6M</b></td></tr>
+        <tr style="background:var(--gl)"><td><b>Operating result</b></td><td><b>15.1M</b></td><td><b>101.5M</b></td><td><b>201.4M</b></td></tr>
+        <tr><td class="mut">Revenue in USD (≈26,280 VND/USD)</td><td class="mut">~$0.8k</td><td class="mut">~$6.9k</td><td class="mut">~$20.1k</td></tr>
+      </table>
+      <p class="mut" style="font-size:13px;margin-top:8px">Low and High scenarios scale all volumes by 0.5× and 1.5×. Full model: saigon-in-a-day-financial-model.xlsx.</p>
+    </div>
+    <div class="card">
+      <span class="tag a">Assumed prices and costs</span>
+      <ul style="font-size:15.5px">
+        <li style="font-size:15.5px">Travellers: <b>free</b> (a design decision)</li>
+        <li style="font-size:15.5px">White-label: 1.5M VND/month (2.0M from 2029) + 2M setup fee per new partner</li>
+        <li style="font-size:15.5px">Featured listing: 500k VND/month · insight report: 15M VND</li>
+        <li style="font-size:15.5px">Founder unpaid in 2027; stipend 3M/month in 2028, 8M/month in 2029; part-time help from 2029</li>
+        <li style="font-size:15.5px">AI cost is a placeholder (300 VND/plan); the planner also works with AI switched off</li>
+      </ul>
+      <div class="fillbox" style="margin-top:6px;font-size:15px"><b>Funding ask:</b> <b>[amount]</b> for <b>[use]</b> over <b>[months]</b>. Leave out if not raising.</div>
+    </div>
+  </div>
+  <div class="src">Traction today: no users, partners, revenue or pilot. All prices and volumes will be validated in partner interviews and the hotel pilot. Exchange rate derived from SGGP, 31 Dec 2025.</div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026</span><span>11</span></div>
+</section>
+
+<!-- 12 PLAN -->
+<section class="s">
+  <div class="k">11 · Plan and next steps</div>
+  <h1>From prototype to a real pilot with visitors and hotels</h1>
+  <div class="grid c4" style="flex:0">
+    <div class="card"><span class="tag">Nov 2026</span><h3>Data and rules</h3><p>Read HIST rules; verify places with coordinates and visit times; test official channels.</p></div>
+    <div class="card"><span class="tag">Dec 2026</span><h3>Small blocks</h3><p>Reach 8+ plannable places so real plans switch on. Limited time during exams.</p></div>
+    <div class="card"><span class="tag">After exams, early 2027</span><h3>Public MVP</h3><p>Deploy publicly; 12–20 verified plannable places; privacy page and disclaimer live.</p></div>
+    <div class="card"><span class="tag">After launch</span><h3>Pilot</h3><p>Survey real visitors (aim n ≥ 30); pilot with 3–5 hotels; report results with counts.</p></div>
+  </div>
+  <div class="grid c2" style="margin-top:22px">
+    <div class="card tint"><h3>Targets we will report against</h3><ul style="margin-top:6px"><li>20, then 40 verified plannable places</li><li>100% of plannable places re-checked within 90 days</li><li>At least 70% of surveyed users rate the plan realistic</li></ul><p class="mut" style="font-size:14px">Targets are proposals, not promises.</p></div>
+    <div class="card"><h3>What we ask from HIST 2026</h3><ul style="margin-top:6px"><li>Mentoring on B2B sales to hotels and tour operators</li><li>Introductions to hotels and venues for the pilot</li><li>Feedback from tourism experts on the data approach</li></ul><div class="fillbox" style="margin-top:6px">Edit to match your real ask.</div></div>
+  </div>
+  <div class="foot"><span>Saigon in a Day · HIST 2026 · Contact: [email]</span><span>12</span></div>
+</section>
+</body></html>

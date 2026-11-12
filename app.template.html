@@ -1,0 +1,627 @@
+<title>Saigon in a Day</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one narrow phone-first column (max 720px), sticky top bar, timeline with a time rail on the left. */
+:root{
+  --bg:#F6F8F7; --surface:#FFFFFF; --ink:#10212B; --muted:#4A5B63; --line:#D5DEDA;
+  --jade:#0A6B52; --jade-ink:#FFFFFF; --jade-soft:#E1F0EA;
+  --warn-bg:#FFF2CF; --warn-ink:#6B4300; --warn-line:#E8B53E;
+  --stop-bg:#FCE4E1; --stop-ink:#8C1D14;
+  --info-bg:#E5EEF7; --info-ink:#1E4468;
+  --fake-bg:#F0E6FA; --fake-ink:#4D2380;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1518; --surface:#152126; --ink:#E7EFEC; --muted:#A3B4B0; --line:#2A3A40;
+  --jade:#4CC3A0; --jade-ink:#06231B; --jade-soft:#123A30;
+  --warn-bg:#3A2C0B; --warn-ink:#FFD889; --warn-line:#8F6A16;
+  --stop-bg:#43191A; --stop-ink:#FFB4AB;
+  --info-bg:#172D42; --info-ink:#B6D4F2;
+  --fake-bg:#2D1E42; --fake-ink:#DCC6FA; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1518; --surface:#152126; --ink:#E7EFEC; --muted:#A3B4B0; --line:#2A3A40;
+  --jade:#4CC3A0; --jade-ink:#06231B; --jade-soft:#123A30;
+  --warn-bg:#3A2C0B; --warn-ink:#FFD889; --warn-line:#8F6A16;
+  --stop-bg:#43191A; --stop-ink:#FFB4AB;
+  --info-bg:#172D42; --info-ink:#B6D4F2;
+  --fake-bg:#2D1E42; --fake-ink:#DCC6FA; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+a{color:var(--jade)} a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--jade);outline-offset:2px}
+h1,h2,h3{line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.9rem,6vw,2.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.35rem;font-weight:800} h3{font-size:1.08rem;font-weight:600}
+p{margin:0} .muted{color:var(--muted)} .small{font-size:.875rem}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:12px;padding-block:10px;flex-wrap:wrap}
+.brand{font-weight:800;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:8px;margin-right:auto}
+.brand .dot{width:22px;height:22px;border-radius:50%;background:var(--jade);display:inline-grid;place-items:center;color:var(--jade-ink);font-size:.7rem;font-family:var(--f-mono)}
+nav.links{display:flex;gap:4px;flex-wrap:wrap}
+nav.links a{text-decoration:none;color:var(--muted);font-weight:500;padding:6px 10px;border-radius:8px;font-size:.92rem}
+nav.links a[aria-current="page"]{color:var(--ink);background:var(--jade-soft)}
+main{padding-block:24px 48px} .stack{display:flex;flex-direction:column;gap:16px} .stack-lg{display:flex;flex-direction:column;gap:28px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{appearance:none;border:2px solid var(--jade);background:var(--jade);color:var(--jade-ink);font:inherit;font-weight:600;padding:12px 18px;border-radius:10px;cursor:pointer;min-height:48px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.ghost{background:transparent;color:var(--jade)} .btn.sm{min-height:40px;padding:8px 12px;font-size:.92rem}
+.btn.quiet{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;letter-spacing:.02em;padding:3px 9px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.badge::before{content:"";width:8px;height:8px;border-radius:2px;background:currentColor}
+.b-ready{background:var(--jade-soft);color:var(--jade)} .b-partial{background:var(--info-bg);color:var(--info-ink)}
+.b-needs_data{background:var(--warn-bg);color:var(--warn-ink)} .b-exterior_only_verify{background:var(--warn-bg);color:var(--warn-ink)}
+.b-temporarily_closed{background:var(--stop-bg);color:var(--stop-ink)} .b-fake{background:var(--fake-bg);color:var(--fake-ink)}
+.b-ready::before{border-radius:50%} .b-temporarily_closed::before{width:10px;height:3px}
+.note{border-left:4px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-ink);padding:10px 14px;border-radius:0 10px 10px 0;font-size:.92rem}
+.note.info{border-color:var(--info-ink);background:var(--info-bg);color:var(--info-ink)}
+.note.fake{border-color:var(--fake-ink);background:var(--fake-bg);color:var(--fake-ink)}
+.note.stop{border-color:var(--stop-ink);background:var(--stop-bg);color:var(--stop-ink)}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.hero{display:grid;gap:18px;padding-block:8px 8px}
+.hero .vi{font-size:1.1rem;color:var(--jade);font-weight:600}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.trust .card{padding:14px} .trust b{display:block;margin-bottom:2px}
+.sample{font-family:var(--f-mono);font-size:.85rem;border:1px dashed var(--line);border-radius:12px;padding:12px;display:grid;gap:4px;overflow-x:auto}
+/* form */
+fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+legend{font-weight:600;margin-bottom:6px;padding:0}
+label{font-weight:500}
+input[type=date],input[type=time],select,textarea,input[type=text],input[type=email]{font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:48px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media (max-width:460px){.grid2{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);font-weight:500}
+.chip input:checked+span{background:var(--jade);border-color:var(--jade);color:var(--jade-ink)}
+.chip input:checked+span::before{content:"✓ ";white-space:pre}
+.chip input:focus-visible+span{outline:3px solid var(--jade);outline-offset:2px}
+.steps{display:flex;gap:6px} .steps i{flex:1;height:6px;border-radius:3px;background:var(--line)} .steps i.on{background:var(--jade)}
+.err{color:var(--stop-ink);font-weight:600;font-size:.92rem}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+/* timeline */
+.tl{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:64px 1fr;gap:12px}
+.tl-time{font-family:var(--f-mono);font-weight:700;font-size:.95rem;padding-top:16px;text-align:right}
+.tl-time small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+.tl-body{border-left:3px solid var(--line);padding:8px 0 8px 16px;min-width:0}
+.tl-item.stop .tl-body{border-color:var(--jade)}
+.tl-item.travel .tl-body{color:var(--muted);font-size:.9rem;border-left-style:dashed;padding-block:6px}
+.tl-item.meal .tl-body{border-color:var(--warn-line)}
+.stopcard{display:flex;flex-direction:column;gap:10px}
+.stopcard .vi{font-weight:600;color:var(--jade)}
+.warns{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.warns li{font-size:.88rem;padding:6px 10px;border-radius:8px;background:var(--warn-bg);color:var(--warn-ink)}
+.warns li.i{background:var(--info-bg);color:var(--info-ink)}
+details summary{cursor:pointer;font-weight:600;color:var(--jade)}
+.srcs{margin:6px 0 0;padding-left:18px;font-size:.88rem;word-break:break-word}
+/* places */
+.filters{display:flex;gap:10px;flex-wrap:wrap} .filters select{width:auto;min-width:160px;flex:1}
+.plist{display:grid;gap:12px}
+.pcard{display:grid;gap:6px;text-decoration:none;color:inherit}
+.pcard:hover{border-color:var(--jade)}
+.pcard .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.tags{display:flex;flex-wrap:wrap;gap:6px} .tag{font-size:.78rem;padding:2px 8px;border-radius:6px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.85rem}
+td.mono{white-space:nowrap}
+.kv{display:grid;grid-template-columns:minmax(110px,30%) 1fr;gap:6px 14px;font-size:.95rem} .kv dt{color:var(--muted);min-width:0} .kv dt .badge{white-space:normal} .kv dd{margin:0;min-width:0;word-break:break-word}
+/* readiness */
+.meter{height:14px;border-radius:7px;background:var(--line);overflow:hidden} .meter b{display:block;height:100%;background:var(--jade)}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.stat .card{padding:12px} .stat .n{font-size:1.8rem;font-weight:800;font-family:var(--f-mono)}
+/* driver card */
+.overlay{position:fixed;inset:0;z-index:20;background:var(--bg);overflow:auto;padding:calc(env(safe-area-inset-top,0px) + 16px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(16px,env(safe-area-inset-left,0px))}
+.driver{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.driver .big{font-size:clamp(2rem,8vw,3rem);font-weight:800;line-height:1.15;color:var(--ink)}
+.driver .addr{font-size:clamp(1.75rem,6.5vw,2.4rem);font-weight:600;line-height:1.25}
+.driver .label{font-size:1.05rem;color:var(--muted)}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);padding:20px;width:min(560px,calc(100vw - 32px))}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+footer{border-top:1px solid var(--line);padding-block:20px 32px;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+.scale{display:flex;gap:6px;flex-wrap:wrap}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#home"><span class="dot" aria-hidden="true">1d</span>Saigon in a Day</a>
+  <nav class="links" aria-label="Main">
+    <a href="#plan" data-nav="plan">Plan</a>
+    <a href="#places" data-nav="places">Places</a>
+    <a href="#data" data-nav="data">Data status</a>
+    <a href="#about" data-nav="about">About</a>
+  </nav>
+</div></header>
+
+<main class="wrap" id="app" tabindex="-1"><p class="muted">Loading…</p></main>
+
+<footer><div class="wrap">
+  <p><b>Opening hours and prices change. Always check before you go.</b> Every place links to its source.</p>
+  <p>Independent student project. Not affiliated with, or endorsed by, the Ho Chi Minh City Department of Tourism, the HIST contest or any listed site.</p>
+  <p><a href="#privacy">Privacy</a> · <a href="#about">Method and sources</a> · <a href="#survey">Short survey</a> · <span id="admin-link"></span></p>
+</div></footer>
+
+<div class="overlay" id="driver" hidden role="dialog" aria-modal="true" aria-labelledby="driver-name"></div>
+
+<dialog id="report-dlg" aria-labelledby="report-title"></dialog>
+
+<script>
+var PLACES = /*__PLACES__*/;
+</script>
+<script>
+/*__ENGINE__*/
+</script>
+<script>
+/*__FAKE__*/
+</script>
+<script>
+(function () {
+"use strict";
+var TODAY = (function () { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); })();
+
+/* ---------- messages (i18n-ready: every visible code goes through t()) ---------- */
+var M = {
+  status: { ready: "Verified", partial: "Partly verified", needs_data: "Needs verification", exterior_only_verify: "Outside view only (check)", temporarily_closed: "Temporarily closed" },
+  statusLong: {
+    ready: "Hours and price read from an official source. Used in plans.",
+    partial: "Some facts verified. Used in plans only if hours confidence is high or medium, with a note to check hours.",
+    needs_data: "Key facts missing. Never used in plans.",
+    exterior_only_verify: "Interior status unclear. Only ever used as a short outside stop.",
+    temporarily_closed: "Closed for now. Never used in plans."
+  },
+  conf: { high: "High: official statement or on-site check", medium: "Medium: reliable press or database", low: "Low: single secondary guide", "null": "Unknown" },
+  warn: {
+    HOURS_MEDIUM_CONFIDENCE: "Hours come from press or a database, not the venue itself. Check before you go.",
+    PARTIAL_CHECK_HOURS: "Partly verified place. Check hours before you go.",
+    PRICE_CHANGED_RECENTLY: "Ticket price changed recently (new city fee from 1 Oct 2026).",
+    LAST_ENTRY_EARLY: "Ticket counter closes before closing time.",
+    EXTERIOR_ONLY: "Outside view only. The interior may be closed.",
+    PRICE_NOT_VERIFIED: "Price not verified.",
+    DATA_OLD: "Last checked more than 90 days ago.",
+    NO_EVENING_PLACES: "No verified evening places yet, so the plan ends before the evening.",
+    TRAFFIC_NOTE: "Travel times are rough estimates (15 km/h plus 10 minutes). Traffic can double them."
+  },
+  missing: {
+    TEMPORARILY_CLOSED: "Temporarily closed", NEEDS_DATA: "Key facts not verified yet",
+    HOURS_CONFIDENCE_LOW: "Opening hours not confirmed by a reliable source", NO_COORDINATES: "Map location not verified yet",
+    NO_VISIT_MINUTES: "Typical visit length not recorded yet", HOURS_UNKNOWN_DAY: "Hours for this weekday are unknown",
+    CLOSED_DAY: "Closed on this weekday", NOT_OPEN_IN_WINDOW: "Not open long enough in your time window",
+    PRICE_UNKNOWN: "Price unknown (you chose free only)", OVER_BUDGET: "Above your budget", MOBILITY: "Lots of walking or stairs"
+  },
+  failure: {
+    TOO_FEW_PLACES: "We do not yet have enough verified places for a full plan with these choices. Try widening your interests.",
+    ALL_CLOSED: "Every place that matches your choices is closed, or has unknown hours, on this day.",
+    NO_MATCH: "We do not have a verified place for that yet."
+  },
+  interest: { history: "History", architecture: "Architecture", museum: "Museums", culture: "Culture & art", religious: "Temples & churches", market: "Markets", food: "Food", local_life: "Local life", park: "Parks", nightlife: "Evening & nightlife" },
+  day: { mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday", sun: "Sunday" },
+  field: { opening_hours: "Opening hours", ticket: "Ticket price", address: "Address", closed: "It is closed", other: "Something else" }
+};
+function t(group, key) { var g = M[group] || {}; return g[key] != null ? g[key] : key; }
+
+/* ---------- helpers ---------- */
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+var VND = new Intl.NumberFormat("en-US");
+function vnd(n) { return n == null ? "Not verified" : n === 0 ? "Free (0 VND)" : VND.format(n) + " VND"; }
+function fmtDate(iso) { try { return new Intl.DateTimeFormat("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(iso + "T00:00:00Z")); } catch (e) { return iso; } }
+function host(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u; } }
+var byId = {}; PLACES.forEach(function (p) { byId[p.id] = p; });
+var fakeById = {}; FAKE_PLACES.forEach(function (p) { fakeById[p.id] = p; });
+function getPlace(id) { return byId[id] || fakeById[id]; }
+function badge(p) { return p.fictional ? '<span class="badge b-fake">Fictional test data</span>' : '<span class="badge b-' + p.data_status + '">' + esc(t("status", p.data_status)) + "</span>"; }
+function hoursText(h) { if (h === "closed") return "Closed"; if (!Array.isArray(h)) return "Not verified"; return h.map(function (r) { return r[0] + "–" + r[1]; }).join(", "); }
+function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k)); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
+function sources(p) {
+  if (!p.source_urls || !p.source_urls.length) return '<p class="small muted">No sources (fictional).</p>';
+  return '<ul class="srcs">' + p.source_urls.map(function (u) { return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(host(u)) + "</a></li>"; }).join("") + "</ul>";
+}
+var CATS = Object.keys(M.interest);
+
+/* ---------- storage for reports and survey (shared db when the viewer can write; otherwise copy text) ---------- */
+var DB = null, USER = null, UID = null;
+var dbReady = (window.claude && window.claude.use) ? Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (r) {
+  DB = r[0]; USER = r[1];
+  if (USER) { USER.id().then(function (id) { UID = id; }).catch(function () {}); renderAdminLink(); }
+}).catch(function () {}) : Promise.resolve();
+function renderAdminLink() {
+  if (!USER) return;
+  try { if (USER.isOwner()) document.getElementById("admin-link").innerHTML = '<a href="#admin">Founder view</a>'; } catch (e) {}
+}
+function save(kind, data) {
+  return dbReady.then(function () {
+    if (!DB || !USER) throw new Error("unavailable");
+    return USER.id().then(function (id) {
+      var rid = Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+      return DB.doc(kind + "/" + id).set({ lastAt: new Date().toISOString() }).then(function () {
+        return DB.doc(kind + "/" + id + "/items/" + rid).set(data);
+      });
+    });
+  });
+}
+
+/* ---------- views ---------- */
+var app = document.getElementById("app");
+var state = { lastInput: store("sid-input") || null, step: 1, result: null, fictional: false };
+
+function defaultInput() {
+  var d = new Date(); d.setDate(d.getDate() + 1);
+  var iso = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  return { date: iso, startTime: "08:30", endTime: "18:00", interests: ["history", "architecture", "museum"], budget: "low", startArea: null, mobility: "easy", group: "couple", evening: false, maxStops: 5 };
+}
+
+function viewHome() {
+  var counts = statusCounts();
+  return '<section class="hero">' +
+    '<p class="eyebrow">One day in Ho Chi Minh City</p>' +
+    '<h1>One day in Saigon, planned from official sources.</h1>' +
+    '<p class="vi" lang="vi">Một ngày Sài Gòn, đúng nguồn, đúng gu.</p>' +
+    '<p>Answer a few questions and get a timed day plan built only from places we have checked. Every stop shows its source, the date we last checked it, and any warning. Show the Vietnamese name and address to your driver.</p>' +
+    '<div class="row"><a class="btn" href="#plan">Plan my day</a><a class="btn ghost" href="#places">Browse places</a></div>' +
+    '</section>' +
+    '<section class="trust" aria-label="Why you can trust it">' +
+    '<div class="card"><b>Official sources</b><span class="small muted">Each place links to the venue, a government page or a named newspaper.</span></div>' +
+    '<div class="card"><b>Last-verified dates</b><span class="small muted">You see when each fact was checked, and how confident we are.</span></div>' +
+    '<div class="card"><b>An honest “I don\'t know”</b><span class="small muted">If we have not verified it, we say so. We never fill gaps with guesses.</span></div>' +
+    '</section>' +
+    '<section class="card stack"><h2>Where the data stands today</h2>' +
+    '<p>We are still verifying places. Today <b class="mono">' + counts.plannable + " of " + PLACES.length + '</b> places have everything the planner needs (opening hours, a map location and a typical visit length). Until at least <span class="mono">' + ENGINE.CONFIG.minPlannable + '</span> are ready, the planner shows you the matching places and what is still missing, instead of a padded plan.</p>' +
+    '<div class="meter" role="img" aria-label="' + counts.plannable + ' of target 20 plannable places"><b style="width:' + Math.max(1, counts.plannable / 20 * 100) + '%"></b></div>' +
+    '<p class="small muted">Target for the pilot: 20 plannable places. <a href="#data">See what each place is missing</a>.</p></section>';
+}
+
+function statusCounts() {
+  var c = { plannable: 0 }; PLACES.forEach(function (p) { c[p.data_status] = (c[p.data_status] || 0) + 1; if (ENGINE.isPlannable(p)) c.plannable++; }); return c;
+}
+
+function viewPlan() {
+  var v = state.lastInput || defaultInput();
+  var s = state.step;
+  var h = '<div class="stack-lg"><div class="stack"><p class="eyebrow">Step ' + s + ' of 3</p><div class="steps" aria-hidden="true"><i class="on"></i><i class="' + (s >= 2 ? "on" : "") + '"></i><i class="' + (s >= 3 ? "on" : "") + '"></i></div></div>' +
+    '<form id="planform" class="stack-lg" novalidate>';
+  if (s === 1) {
+    h += '<h1>What do you enjoy?</h1><fieldset><legend>Pick one or more</legend><div class="chips">' +
+      CATS.map(function (c) { return '<label class="chip"><input type="checkbox" name="interests" id="int-' + c + '" value="' + c + '"' + (v.interests.indexOf(c) >= 0 ? " checked" : "") + '><span>' + esc(t("interest", c)) + "</span></label>"; }).join("") +
+      '</div></fieldset><p class="err" id="ferr" role="alert"></p>';
+  } else if (s === 2) {
+    h += '<h1>Your day</h1>' +
+      '<div class="stack"><label for="f-date">Date</label><input type="date" id="f-date" name="date" required value="' + esc(v.date) + '"></div>' +
+      '<div class="grid2"><div class="stack"><label for="f-start">Start time</label><input type="time" id="f-start" name="startTime" required value="' + esc(v.startTime) + '"></div>' +
+      '<div class="stack"><label for="f-end">End time</label><input type="time" id="f-end" name="endTime" required value="' + esc(v.endTime) + '"></div></div>' +
+      '<div class="grid2"><div class="stack"><label for="f-budget">Budget per place</label><select id="f-budget" name="budget">' +
+      [["free", "Free only"], ["low", "Low (up to about 100,000 VND)"], ["medium", "Medium"], ["high", "Any price"]].map(function (o) { return '<option value="' + o[0] + '"' + (v.budget === o[0] ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") +
+      '</select></div><div class="stack"><label for="f-group">Who is travelling?</label><select id="f-group" name="group">' +
+      [["solo", "Just me"], ["couple", "Two of us"], ["family", "Family with children"], ["friends", "Friends"]].map(function (o) { return '<option value="' + o[0] + '"' + (v.group === o[0] ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") +
+      '</select></div></div>' +
+      '<fieldset><legend>Walking</legend><div class="chips">' +
+      '<label class="chip"><input type="radio" name="mobility" id="mob-easy" value="easy"' + (v.mobility !== "limited" ? " checked" : "") + '><span>Walking is fine</span></label>' +
+      '<label class="chip"><input type="radio" name="mobility" id="mob-lim" value="limited"' + (v.mobility === "limited" ? " checked" : "") + '><span>Keep walking short</span></label></div></fieldset>' +
+      '<fieldset><legend>Evening</legend><div class="chips"><label class="chip"><input type="checkbox" id="f-evening" name="evening"' + (v.evening ? " checked" : "") + '><span>Add an evening part (after 18:00)</span></label></div></fieldset>' +
+      '<div class="stack"><label for="f-area">Starting point</label><select id="f-area" disabled><option>City centre (District 1)</option></select><p class="small muted">Hotel areas will be added once their map locations are verified.</p></div>' +
+      '<p class="err" id="ferr" role="alert"></p>';
+  } else {
+    h += '<h1>Anything else?</h1><div class="stack"><label for="f-text">Tell us in your own words (optional)</label>' +
+      '<textarea id="f-text" maxlength="500" placeholder="For example: I love old buildings, not too much walking." disabled></textarea>' +
+      '<p class="small muted">Free-text planning comes in a later version. This site runs in <b>Simple mode</b>: the plan is made by fixed rules from the form above, with no AI.</p></div>' +
+      '<div class="card stack small"><b>Your choices</b><p>' + esc(v.interests.map(function (c) { return t("interest", c); }).join(", ")) + '</p><p class="mono">' + esc(fmtDate(v.date)) + " · " + esc(v.startTime) + "–" + esc(v.evening ? v.endTime : (ENGINE.toMin(v.endTime) > 1080 ? "18:00" : v.endTime)) + '</p><p>Budget: ' + esc(v.budget) + " · Walking: " + esc(v.mobility) + (v.evening ? " · Evening on" : "") + "</p></div>";
+  }
+  h += '<div class="row">' + (s > 1 ? '<button type="button" class="btn quiet" id="back">Back</button>' : "") +
+    '<button type="submit" class="btn">' + (s < 3 ? "Next" : "Make my plan") + "</button></div></form></div>";
+  return h;
+}
+
+function bindPlan() {
+  var f = document.getElementById("planform"); if (!f) return;
+  var v = state.lastInput || defaultInput();
+  var back = document.getElementById("back");
+  if (back) back.onclick = function () { collect(); state.step--; render(); };
+  function collect() {
+    if (state.step === 1) v.interests = [].slice.call(f.querySelectorAll('input[name=interests]:checked')).map(function (x) { return x.value; });
+    if (state.step === 2) {
+      v.date = f.date.value; v.startTime = f.startTime.value; v.endTime = f.endTime.value; v.budget = f.budget.value; v.group = f.group.value;
+      v.mobility = f.querySelector('input[name=mobility]:checked').value; v.evening = document.getElementById("f-evening").checked;
+      if (v.evening && ENGINE.toMin(v.endTime) <= 1080) v.endTime = "21:00";
+    }
+    state.lastInput = v; store("sid-input", v);
+  }
+  f.onsubmit = function (e) {
+    e.preventDefault(); collect();
+    var err = document.getElementById("ferr");
+    if (state.step === 1 && !v.interests.length) { err.textContent = "Pick at least one interest."; return; }
+    if (state.step === 2) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(v.date)) { err.textContent = "Choose a date."; return; }
+      if (!v.startTime || !v.endTime || ENGINE.toMin(v.endTime) - ENGINE.toMin(v.startTime) < 120) { err.textContent = "End time must be at least 2 hours after the start time."; return; }
+    }
+    if (state.step < 3) { state.step++; render(); return; }
+    state.result = ENGINE.plan(v, PLACES, { today: TODAY, now: new Date().toISOString() });
+    state.fictional = false;
+    location.hash = "itinerary";
+  };
+}
+
+function stopCard(p, item) {
+  var warns = (item ? item.warnings : []);
+  var reasons = (item ? item.reasons : []).map(function (r) {
+    if (r.code === "MATCHES") return "Matches your interests: " + r.values.map(function (x) { return t("interest", x); }).join(", ") + ".";
+    if (r.code === "WAIT_FOR_OPENING") return "Opens at " + r.values[0] + ", so you may wait a few minutes.";
+    return r.code;
+  });
+  return '<div class="stopcard"><div class="row" style="justify-content:space-between"><h3>' + esc(p.name_en) + "</h3>" + badge(p) + "</div>" +
+    '<p class="vi" lang="vi">' + esc(p.name_vi) + "</p>" +
+    '<p class="small" lang="vi">' + esc(p.address_vi || "Address not verified") + "</p>" +
+    (reasons.length ? '<p class="small">' + esc(reasons.join(" ")) + "</p>" : "") +
+    (warns.length ? '<ul class="warns">' + warns.map(function (w) { return "<li>" + esc(t("warn", w)) + "</li>"; }).join("") + "</ul>" : "") +
+    '<p class="small muted">Ticket (adult): ' + esc(vnd(p.ticket_adult_vnd)) + " · Last verified " + esc(fmtDate(p.last_verified)) + "</p>" +
+    "<details><summary>Sources</summary>" + sources(p) + "</details>" +
+    '<div class="row"><button class="btn sm" data-driver="' + esc(p.id) + '">Show to driver</button>' +
+    (p.fictional ? "" : '<button class="btn sm quiet" data-report="' + esc(p.id) + '">Report wrong information</button><a class="btn sm quiet" href="#' + esc(p.id) + '">Details</a>') + "</div></div>";
+}
+
+function viewItinerary() {
+  var r = state.result;
+  if (!r) return '<div class="stack"><h1>No plan yet</h1><p>Answer three short questions to make one.</p><p><a class="btn" href="#plan">Plan my day</a></p></div>';
+  var inp = r.input, list = state.fictional ? FAKE_PLACES : PLACES;
+  var h = '<div class="stack-lg">';
+  if (state.fictional) h += '<div class="note fake" role="note"><b>Fictional test data.</b> These places do not exist. This preview only shows how the planner works once enough real places are verified. Do not use it to travel.</div>';
+  h += '<div class="stack"><p class="eyebrow">Your day · Simple mode</p><h1>' + esc(fmtDate(inp.date)) + '</h1><p class="mono">' + esc(inp.startTime) + "–" + esc(inp.evening ? inp.endTime : (ENGINE.toMin(inp.endTime) > 1080 ? "18:00" : inp.endTime)) + " · " + esc(inp.interests.map(function (c) { return t("interest", c); }).join(", ")) + "</p></div>";
+
+  if (r.failure) {
+    var matched = r.failure.matchedPlaceIds.map(getPlace);
+    h += '<div class="note info" role="status"><b>' + esc(t("failure", r.failure.code)) + "</b> We never pad a plan with places we have not checked.</div>";
+    if (matched.length) h += '<section class="stack"><h2>Ready to plan with your choices (' + matched.length + ")</h2>" + matched.map(function (p) { return '<div class="card">' + stopCard(p, null) + "</div>"; }).join("") + "</section>";
+    if (r.nearMatches && r.nearMatches.length) {
+      h += '<section class="stack"><h2>Matching places we are still verifying</h2><p class="muted">These match your interests. Here is exactly what is missing for <b>' + esc(t("day", r.weekday)) + "</b>.</p>";
+      h += r.nearMatches.map(function (n) {
+        var p = getPlace(n.placeId), hrs = p.opening_hours ? p.opening_hours[r.weekday] : null;
+        return '<div class="card stack"><div class="row" style="justify-content:space-between"><h3><a href="#' + esc(p.id) + '">' + esc(p.name_en) + "</a></h3>" + badge(p) + "</div>" +
+          '<p class="vi" lang="vi" style="color:var(--jade);font-weight:600">' + esc(p.name_vi) + "</p>" +
+          '<p class="small">Hours on ' + esc(t("day", r.weekday)) + ': <span class="mono">' + esc(hoursText(hrs)) + "</span>" + (p.hours_confidence ? " (confidence: " + esc(p.hours_confidence) + ")" : "") + "</p>" +
+          '<ul class="warns">' + n.reasons.map(function (x) { return '<li class="i">' + esc(t("missing", x)) + "</li>"; }).join("") + "</ul>" +
+          '<div class="row"><button class="btn sm quiet" data-driver="' + esc(p.id) + '">Show to driver</button><button class="btn sm quiet" data-report="' + esc(p.id) + '">Report wrong information</button></div></div>';
+      }).join("") + "</section>";
+    }
+    h += '<section class="card stack"><h2>See how a full plan looks</h2><p>Want to see the timeline, travel gaps, lunch window and warnings? Run the same rules on a set of clearly marked fictional test places.</p><div class="row"><button class="btn ghost" id="fake-run">Preview with fictional test places</button><a class="btn quiet" href="#plan">Change my choices</a></div></section>';
+  } else {
+    h += '<div class="row small muted"><span>' + r.summary.stops + " stops</span>·<span>about " + r.summary.totalWalkOrTravelMinutes + " min of transfers</span>·<span>" + r.summary.verifiedSources + " sources linked</span></div>";
+    h += '<ul class="warns">' + r.notices.map(function (w) { return '<li class="i">' + esc(t("warn", w)) + "</li>"; }).join("") + "</ul>";
+    h += '<ol class="tl" style="list-style:none;margin:0;padding:0">' + r.items.map(function (it) {
+      if (it.type === "travel") return '<li class="tl-item travel"><div class="tl-time"></div><div class="tl-body">About ' + it.minutes + " min by taxi or motorbike taxi. Traffic can double this.</div></li>";
+      if (it.type === "meal") {
+        var sug = it.suggestion === "ask_hotel" ? "Ask your hotel for a nearby local restaurant. We only suggest verified places, and we have none to suggest here yet." : "Food stalls at " + esc(getPlace(it.suggestion.placeId).name_en) + ".";
+        return '<li class="tl-item meal"><div class="tl-time">' + it.start + "<small>" + it.end + '</small></div><div class="tl-body"><h3>' + (it.kind === "lunch" ? "Lunch break" : "Dinner break") + '</h3><p class="small">' + sug + "</p></div></li>";
+      }
+      var p = getPlace(it.placeId);
+      return '<li class="tl-item stop"><div class="tl-time">' + it.start + "<small>" + it.end + '</small></div><div class="tl-body card">' + stopCard(p, it) + "</div></li>";
+    }).join("") + "</ol>";
+    h += '<div class="row">' + (state.fictional ? '<button class="btn quiet" id="real-back">Back to real data</button>' : "") + '<a class="btn quiet" href="#plan">Change my choices</a><a class="btn ghost" href="#survey">Tell us what you think</a></div>';
+  }
+  return h + "</div>";
+}
+function bindItinerary() {
+  var b = document.getElementById("fake-run");
+  if (b) b.onclick = function () { state.fictional = true; state.realResult = state.result; state.result = ENGINE.plan(Object.assign({}, state.result.input, { interests: CATS.slice(), evening: true, endTime: ENGINE.toMin(state.result.input.endTime) < 1260 ? "21:00" : state.result.input.endTime, maxStops: 6 }), FAKE_PLACES, { today: TODAY }); render(); window.scrollTo(0, 0); };
+  var rb = document.getElementById("real-back");
+  if (rb) rb.onclick = function () { state.fictional = false; state.result = state.realResult; render(); window.scrollTo(0, 0); };
+}
+
+function viewPlaces() {
+  var f = store("sid-filter") || { cat: "", status: "" };
+  var list = PLACES.filter(function (p) { return (!f.cat || p.categories.indexOf(f.cat) >= 0) && (!f.status || p.data_status === f.status); });
+  return '<div class="stack-lg"><div class="stack"><h1>Places</h1><p class="muted">All ' + PLACES.length + " places we have researched, with their verification status. Weak data is labelled.</p></div>" +
+    '<div class="filters"><select id="fcat" aria-label="Filter by category"><option value="">All categories</option>' + CATS.map(function (c) { return '<option value="' + c + '"' + (f.cat === c ? " selected" : "") + ">" + t("interest", c) + "</option>"; }).join("") + "</select>" +
+    '<select id="fstatus" aria-label="Filter by status"><option value="">All statuses</option>' + Object.keys(M.status).map(function (s) { return '<option value="' + s + '"' + (f.status === s ? " selected" : "") + ">" + t("status", s) + "</option>"; }).join("") + "</select></div>" +
+    '<div class="plist">' + (list.length ? list.map(function (p) {
+      return '<a class="card pcard" href="#' + esc(p.id) + '"><div class="top"><h3>' + esc(p.name_en) + "</h3>" + badge(p) + '</div><p class="vi" lang="vi" style="color:var(--jade);font-weight:600">' + esc(p.name_vi) + '</p><p class="small muted">' + esc(p.status_note || "") + '</p><div class="tags">' + p.categories.map(function (c) { return '<span class="tag">' + esc(t("interest", c)) + "</span>"; }).join("") + "</div></a>";
+    }).join("") : '<p class="muted">No places match these filters.</p>') + "</div></div>";
+}
+function bindPlaces() {
+  ["fcat", "fstatus"].forEach(function (id) { var el = document.getElementById(id); if (el) el.onchange = function () { store("sid-filter", { cat: document.getElementById("fcat").value, status: document.getElementById("fstatus").value }); render(); }; });
+}
+
+function viewPlace(p) {
+  var days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+  var miss = ENGINE.missingFor(p);
+  return '<div class="stack-lg"><p><a href="#places">← All places</a></p><div class="stack"><div class="row">' + badge(p) + "</div><h1>" + esc(p.name_en) + '</h1><p class="vi" lang="vi" style="color:var(--jade);font-weight:600;font-size:1.15rem">' + esc(p.name_vi) + "</p><p>" + esc(p.description_en) + "</p></div>" +
+    (p.data_status === "temporarily_closed" ? '<div class="note stop"><b>Temporarily closed.</b> ' + esc(p.status_note) + "</div>" : p.status_note ? '<div class="note info">' + esc(p.status_note) + "</div>" : "") +
+    '<section class="card stack"><h2>Opening hours</h2><div class="tablewrap"><table><thead><tr><th>Day</th><th>Hours</th></tr></thead><tbody>' +
+    days.map(function (d) { return "<tr><td>" + t("day", d) + '</td><td class="mono">' + esc(hoursText(p.opening_hours[d])) + "</td></tr>"; }).join("") + "</tbody></table></div>" +
+    '<p class="small"><b>Confidence:</b> ' + esc(t("conf", String(p.hours_confidence))) + "</p>" + (p.hours_note ? '<p class="small muted">' + esc(p.hours_note) + "</p>" : "") + "</section>" +
+    '<section class="card stack"><h2>Tickets and address</h2><dl class="kv"><dt>Adult ticket</dt><dd class="mono">' + esc(vnd(p.ticket_adult_vnd)) + "</dd>" +
+    (p.ticket_note ? "<dt>Ticket note</dt><dd class=\"small\">" + esc(p.ticket_note) + "</dd>" : "") +
+    '<dt>Address (VI)</dt><dd lang="vi">' + esc(p.address_vi || "Not verified") + "</dd><dt>Address (EN)</dt><dd>" + esc(p.address_en || "Not verified") + "</dd>" +
+    "<dt>Map location</dt><dd>" + (p.lat != null ? esc(p.lat + ", " + p.lng) : "Not verified yet") + "</dd>" +
+    "<dt>Typical visit</dt><dd>" + (p.typical_visit_minutes != null ? p.typical_visit_minutes + " min" : "Not recorded yet") + "</dd></dl></section>" +
+    '<section class="card stack"><h2>Can the planner use it?</h2>' + (miss.length ? '<p>Not yet. Missing:</p><ul class="warns">' + miss.map(function (m) { return '<li class="i">' + esc(t("missing", m)) + "</li>"; }).join("") + "</ul>" : "<p>Yes.</p>") + "</section>" +
+    '<section class="card stack"><h2>Sources</h2>' + sources(p) + '<p class="small muted">Last verified ' + esc(fmtDate(p.last_verified)) + " by " + esc(p.verified_by) + "</p></section>" +
+    '<div class="row"><button class="btn" data-driver="' + esc(p.id) + '">Show to driver</button><button class="btn quiet" data-report="' + esc(p.id) + '">Report wrong information</button></div></div>';
+}
+
+function viewData() {
+  var c = statusCounts();
+  var rows = PLACES.map(function (p) { return { p: p, m: ENGINE.missingFor(p) }; }).sort(function (a, b) { return a.m.length - b.m.length; });
+  return '<div class="stack-lg"><div class="stack"><h1>Data status</h1><p class="muted">How ready our place data is for planning. A place is plannable only when it is verified or partly verified with high or medium hours confidence, not closed, and has a map location and a typical visit length.</p></div>' +
+    '<div class="stat">' + [["Plannable", c.plannable], ["Verified", c.ready || 0], ["Partly verified", c.partial || 0], ["Needs verification", c.needs_data || 0], ["Outside only", c.exterior_only_verify || 0], ["Closed", c.temporarily_closed || 0]].map(function (s) { return '<div class="card"><div class="n">' + s[1] + '</div><div class="small muted">' + s[0] + "</div></div>"; }).join("") + "</div>" +
+    '<div class="stack"><div class="row small" style="justify-content:space-between"><span>Plannable places</span><span class="mono">' + c.plannable + " / 20 target</span></div><div class=\"meter\"><b style=\"width:" + Math.max(1, c.plannable / 20 * 100) + '%"></b></div></div>' +
+    '<div class="tablewrap card" style="padding:0"><table><thead><tr><th>Place</th><th>Status</th><th>Still missing</th></tr></thead><tbody>' +
+    rows.map(function (r) { return '<tr><td><a href="#' + esc(r.p.id) + '">' + esc(r.p.name_en) + "</a></td><td>" + badge(r.p) + '</td><td class="small">' + (r.m.length ? r.m.map(function (x) { return esc(t("missing", x)); }).join("; ") : "Nothing") + "</td></tr>"; }).join("") + "</tbody></table></div>" +
+    '<p class="small muted">No map locations or visit lengths have been filled in from memory. They will be added only with a recorded source, after a check by the founder.</p></div>';
+}
+
+function viewAbout() {
+  return '<div class="stack-lg"><div class="stack"><h1>Method and sources</h1><p>Saigon in a Day builds a realistic one-day itinerary for international visitors in Ho Chi Minh City, using only information we have verified. It is an independent student project.</p></div>' +
+    '<section class="card stack"><h2>Our promise</h2><p>We only plan with places in our own checked list. Every stop shows its source and the date we last checked it. When we do not know something, we say “not verified” instead of guessing. A wrong opening time that sends you to a closed door is the exact problem we want to fix.</p></section>' +
+    '<section class="card stack"><h2>What the status labels mean</h2><dl class="kv">' + Object.keys(M.status).map(function (s) { return '<dt><span class="badge b-' + s + '">' + t("status", s) + "</span></dt><dd class=\"small\">" + esc(t("statusLong", s)) + "</dd>"; }).join("") + "</dl></section>" +
+    '<section class="card stack"><h2>How a plan is made</h2><ol class="small" style="margin:0;padding-left:20px;display:grid;gap:6px">' +
+    "<li>We keep only places that are open long enough on your chosen weekday and time, fit your budget and walking needs, and have complete data.</li>" +
+    "<li>Places score higher when they match more of your interests, come from an official source, or have high-confidence hours. Far-away places score lower.</li>" +
+    "<li>We add stops one by one, checking opening hours, waiting at most 30 minutes for a place to open, and never staying past closing time.</li>" +
+    "<li>We leave a lunch window between 11:30 and 13:30, and a dinner window if you choose an evening.</li>" +
+    "<li>Travel times are rough: distance at 15 km/h plus 10 minutes. Traffic can double them.</li>" +
+    "<li>If too few places match, we tell you instead of padding the plan.</li></ol>" +
+    '<p class="small muted">The same choices always give the same plan. No AI model picks places. This version runs in Simple mode with no AI at all.</p></section>' +
+    '<section class="card stack"><h2>Recent changes we track</h2><p class="small">From 1 October 2026 the adult fee is 60,000 VND per visit at the War Remnants Museum, Fine Arts Museum, Museum of Ho Chi Minh City and HCMC History Museum, for domestic and international visitors (Tuoi Tre, 11 October 2026, reporting a city council resolution). The Ho Chi Minh Museum branch at Nha Rong has been closed for renovation since 7 May 2026.</p></section>' +
+    '<section class="card stack"><h2>Found a mistake?</h2><p>Every place has a “Report wrong information” button. Reports never change the data automatically. The founder checks the source first, then updates the data and logs the change.</p></section></div>';
+}
+
+function viewPrivacy() {
+  return '<div class="stack-lg"><h1>Privacy</h1><div class="card stack"><p>We do not use accounts, advertising trackers or your device location.</p><div class="tablewrap"><table><thead><tr><th>What</th><th>Stored?</th></tr></thead><tbody>' +
+    "<tr><td>Your plan choices</td><td>Only in your own browser, to refill the form next time. Never sent to us.</td></tr>" +
+    "<tr><td>Free text</td><td>Not collected in this version.</td></tr>" +
+    "<tr><td>Error reports</td><td>Yes: place, field, your message, time and an optional contact email (kept only so we can follow up).</td></tr>" +
+    "<tr><td>Survey answers</td><td>Yes, anonymous answers only. No names.</td></tr>" +
+    "<tr><td>Cookies</td><td>None set by this page.</td></tr></tbody></table></div>" +
+    '<p class="small muted">Reports and survey answers are saved to this page\'s own storage, which only the founder can read. Visitors who cannot save there are shown the text to copy instead. To ask for removal, include the word “remove” and the date in a new report.</p></div></div>';
+}
+
+function viewSurvey() {
+  function scale(name, lo, hi, labels) {
+    var o = ""; for (var i = lo; i <= hi; i++) o += '<label class="chip"><input type="radio" name="' + name + '" id="' + name + "-" + i + '" value="' + i + '"><span>' + i + "</span></label>";
+    return '<div class="chips">' + o + "</div>" + (labels ? '<p class="small muted">' + labels + "</p>" : "");
+  }
+  return '<div class="stack-lg"><div class="stack"><h1>Short survey</h1><p>Two minutes, anonymous and voluntary. We use the answers only to improve this student project. Please do not write your name. You must be 18 or older.</p></div>' +
+    '<form id="survey" class="stack-lg" novalidate><input class="hp" type="text" name="website" id="sv-hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+    '<section class="card stack"><h2>About your trip</h2>' +
+    '<fieldset><legend>How many days are you spending in Ho Chi Minh City?</legend><div class="chips">' + ["1", "2", "3-4", "5+"].map(function (v) { return '<label class="chip"><input type="radio" name="days" id="sv-days-' + v + '" value="' + v + '"><span>' + v + "</span></label>"; }).join("") + "</div></fieldset>" +
+    '<fieldset><legend>Where did you get information to plan your days?</legend><div class="chips">' + ["Blogs", "Social media", "Review sites", "AI chatbot", "Guidebook", "Hotel or host", "Tour agency", "Other"].map(function (v, i) { return '<label class="chip"><input type="checkbox" name="sources" id="sv-src-' + i + '" value="' + v + '"><span>' + v + "</span></label>"; }).join("") + "</div></fieldset>" +
+    '<fieldset><legend>How difficult was it to plan a one-day route?</legend>' + scale("difficulty", 1, 5, "1 = very easy, 5 = very difficult") + "</fieldset>" +
+    '<fieldset><legend>Did you find information that turned out to be wrong (closed place, wrong price or hours)?</legend><div class="chips">' + ["Yes", "No", "Not sure"].map(function (v) { return '<label class="chip"><input type="radio" name="wrongInfo" id="sv-w-' + v.replace(" ", "") + '" value="' + v + '"><span>' + v + "</span></label>"; }).join("") + "</div>" +
+    '<label for="sv-wrongwhat" class="small">If yes, what? (optional)</label><input type="text" id="sv-wrongwhat" name="wrongWhat" maxlength="300"></fieldset>' +
+    '<fieldset><legend>Roughly how much time did you spend planning?</legend><div class="chips">' + ["Under 30 min", "30-60 min", "1-2 hours", "Over 2 hours"].map(function (v, i) { return '<label class="chip"><input type="radio" name="planTime" id="sv-pt-' + i + '" value="' + v + '"><span>' + v + "</span></label>"; }).join("") + "</div></fieldset>" +
+    '<fieldset><legend>Would you use a tool that shows official sources and last-checked dates?</legend>' + scale("wouldUse", 1, 5, "1 = not at all, 5 = definitely") + "</fieldset></section>" +
+    '<section class="card stack"><h2>If you tried the planner</h2>' +
+    '<fieldset><legend>Did the plan look realistic for your day?</legend>' + scale("realistic", 1, 5) + "</fieldset>" +
+    '<div class="stack"><label for="sv-surprise">Was any stop wrong or surprising? (optional)</label><input type="text" id="sv-surprise" name="surprise" maxlength="300"></div>' +
+    '<fieldset><legend>How much did the sources and “last verified” dates increase your trust?</legend>' + scale("trust", 1, 5) + "</fieldset>" +
+    '<fieldset><legend>How useful was the “Show to driver” card?</legend>' + scale("driverCard", 1, 5) + '<div class="chips"><label class="chip"><input type="radio" name="driverCard" id="sv-dc-na" value="not used"><span>Did not use it</span></label></div></fieldset>' +
+    '<fieldset><legend>Would you recommend it to a friend travelling here?</legend>' + scale("nps", 0, 10, "0 = not at all likely, 10 = extremely likely") + "</fieldset></section>" +
+    '<label class="chip"><input type="checkbox" id="sv-consent" name="consent"><span>I am 18+ and agree that my anonymous answers are used for this project.</span></label>' +
+    '<p class="err" id="sv-err" role="alert"></p><div class="row"><button class="btn" type="submit">Send answers</button></div><div id="sv-out"></div></form></div>';
+}
+function bindSurvey() {
+  var f = document.getElementById("survey"); if (!f) return;
+  var opened = Date.now();
+  f.onsubmit = function (e) {
+    e.preventDefault();
+    var err = document.getElementById("sv-err"), out = document.getElementById("sv-out");
+    if (!document.getElementById("sv-consent").checked) { err.textContent = "Please tick the consent box to send your answers."; return; }
+    if (f.website.value || Date.now() - opened < 4000) { err.textContent = "Please take a moment to answer, then send again."; return; }
+    var fd = new FormData(f), data = { at: new Date().toISOString() };
+    ["days", "difficulty", "wrongInfo", "wrongWhat", "planTime", "wouldUse", "realistic", "surprise", "trust", "driverCard", "nps"].forEach(function (k) { var v = fd.get(k); data[k] = v == null ? null : String(v).replace(/<[^>]*>/g, "").slice(0, 300); });
+    data.sources = fd.getAll("sources");
+    err.textContent = "";
+    save("survey", data).then(function () { out.innerHTML = '<div class="note info" role="status"><b>Thank you.</b> Your answers were saved.</div>'; f.querySelector("button[type=submit]").disabled = true; })
+      .catch(function () { out.innerHTML = '<div class="note" role="status">We could not save here (you may be viewing without sign-in). Copy your answers and send them to the founder:<pre class="sample" style="white-space:pre-wrap">' + esc(JSON.stringify(data, null, 1)) + "</pre></div>"; });
+  };
+}
+
+function viewAdmin() {
+  return '<div class="stack-lg"><h1>Founder view</h1><p class="muted">Reports and survey answers saved from this page. Only you can see this.</p><div id="admin-out"><p class="muted">Loading saved entries…</p></div></div>';
+}
+function bindAdmin() {
+  var out = document.getElementById("admin-out"); if (!out) return;
+  var timer = setTimeout(function () { out.innerHTML = '<p class="muted">Saved entries are not available in this view.</p>'; }, 10000);
+  dbReady.then(function () {
+    if (!DB || !USER || !USER.isOwner()) { clearTimeout(timer); out.innerHTML = '<p class="muted">Only the founder can see this page.</p>'; return; }
+    function load(kind) {
+      return DB.collection(kind).get().then(function (snap) {
+        return Promise.all(snap.docs.map(function (d) { return DB.collection(kind + "/" + d.id + "/items").get().then(function (s) { return s.docs.map(function (x) { return x.data(); }); }); }));
+      }).then(function (a) { return [].concat.apply([], a).sort(function (x, y) { return (y.at || "").localeCompare(x.at || ""); }); });
+    }
+    Promise.all([load("reports"), load("survey")]).then(function (r) {
+      clearTimeout(timer);
+      var el = document.createElement("div"); el.className = "stack-lg";
+      el.innerHTML = "<section class=\"stack\"><h2>Error reports (" + r[0].length + ")</h2>" + (r[0].length ? r[0].map(function (x) { var p = byId[x.placeId]; return '<div class="card stack small"><b>' + esc(p ? p.name_en : x.placeId) + " · " + esc(t("field", x.field)) + '</b><p class="rep-msg"></p><p class="muted">' + esc(x.at) + (x.contact ? " · contact: " + esc(x.contact) : "") + "</p></div>"; }).join("") : '<p class="muted">None yet.</p>') + "</section>" +
+        "<section class=\"stack\"><h2>Survey answers (" + r[1].length + ")</h2>" + (r[1].length ? '<div class="tablewrap card" style="padding:0"><table><thead><tr><th>Date</th><th>Days</th><th>Difficulty</th><th>Wrong info</th><th>Would use</th><th>Realistic</th><th>Trust</th><th>NPS</th></tr></thead><tbody>' + r[1].map(function (x) { return '<tr><td class="mono">' + esc((x.at || "").slice(0, 10)) + "</td><td>" + esc(x.days) + "</td><td>" + esc(x.difficulty) + "</td><td>" + esc(x.wrongInfo) + "</td><td>" + esc(x.wouldUse) + "</td><td>" + esc(x.realistic) + "</td><td>" + esc(x.trust) + "</td><td>" + esc(x.nps) + "</td></tr>"; }).join("") + "</tbody></table></div>" : '<p class="muted">None yet.</p>') + "</section>";
+      // user text set with textContent, never as HTML
+      var msgs = el.querySelectorAll(".rep-msg"); r[0].forEach(function (x, i) { if (msgs[i]) msgs[i].textContent = x.message || ""; });
+      out.innerHTML = ""; out.appendChild(el);
+    }).catch(function () { clearTimeout(timer); out.innerHTML = '<p class="muted">Could not load saved entries.</p>'; });
+  });
+}
+
+/* ---------- driver card ---------- */
+var drv = document.getElementById("driver"), lastFocus = null;
+function openDriver(id) {
+  var p = getPlace(id); if (!p) return;
+  lastFocus = document.activeElement;
+  var text = p.name_vi + "\n" + (p.address_vi || "");
+  var maps = (p.lat != null && p.coords_source && !p.fictional) ? '<a class="btn quiet" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(p.name_vi + " " + (p.address_vi || "")) + '">Open in maps</a>' : "";
+  drv.innerHTML = '<div class="driver">' + (p.fictional ? '<div class="note fake"><b>Fictional test place.</b> Do not show this to a driver.</div>' : "") +
+    '<p class="label" lang="vi">Xin chở tôi đến:</p><p class="label">Please take me to:</p>' +
+    '<p class="big" id="driver-name" lang="vi">' + esc(p.name_vi) + "</p>" +
+    '<p class="addr" lang="vi">' + esc(p.address_vi || "Địa chỉ chưa được xác minh (address not verified)") + "</p>" +
+    '<p class="muted">' + esc(p.name_en) + "</p>" +
+    '<div class="row"><button class="btn" id="drv-copy">Copy name and address</button>' + maps + '<button class="btn quiet" id="drv-close">Close</button></div><p class="small muted" id="drv-msg" role="status"></p></div>';
+  drv.hidden = false; document.body.style.overflow = "hidden";
+  document.getElementById("drv-close").onclick = closeDriver; document.getElementById("drv-close").focus();
+  document.getElementById("drv-copy").onclick = function () {
+    var msg = document.getElementById("drv-msg");
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(document.getElementById("driver-name").parentNode.querySelector(".addr")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = "Selected. Use your phone's Copy."; };
+    try { navigator.clipboard.writeText(text).then(function () { msg.textContent = "Copied."; }, fallback); } catch (e) { fallback(); }
+  };
+}
+function closeDriver() { drv.hidden = true; drv.innerHTML = ""; document.body.style.overflow = ""; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !drv.hidden) closeDriver(); });
+
+/* ---------- report dialog ---------- */
+var dlg = document.getElementById("report-dlg");
+function openReport(id) {
+  var p = getPlace(id); if (!p) return;
+  var opened = Date.now();
+  dlg.innerHTML = '<form id="rep" class="stack" method="dialog" novalidate><h2 id="report-title">Report wrong information</h2><p class="small muted">' + esc(p.name_en) + '</p>' +
+    '<input class="hp" type="text" name="website" id="rep-hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+    '<div class="stack"><label for="rep-field">What is wrong?</label><select id="rep-field" name="field">' + Object.keys(M.field).map(function (k) { return '<option value="' + k + '">' + M.field[k] + "</option>"; }).join("") + "</select></div>" +
+    '<div class="stack"><label for="rep-msg">Tell us what you saw (max 500 characters)</label><textarea id="rep-msg" name="message" maxlength="500" required></textarea></div>' +
+    '<div class="stack"><label for="rep-contact">Email (optional)</label><input type="email" id="rep-contact" name="contact" maxlength="100"><p class="small muted">Stored only so we can follow up.</p></div>' +
+    '<p class="err" id="rep-err" role="alert"></p><div id="rep-out"></div><div class="row"><button class="btn" type="submit" id="rep-send">Send report</button><button class="btn quiet" type="button" id="rep-cancel">Close</button></div></form>';
+  try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); }
+  document.getElementById("rep-cancel").onclick = function () { dlg.close ? dlg.close() : dlg.removeAttribute("open"); };
+  document.getElementById("rep").onsubmit = function (e) {
+    e.preventDefault();
+    var f = e.target, err = document.getElementById("rep-err"), out = document.getElementById("rep-out");
+    var msg = f.message.value.replace(/[\u0000-\u001f]/g, " ").replace(/<[^>]*>/g, "").trim().slice(0, 500);
+    if (msg.length < 3) { err.textContent = "Please describe what is wrong."; return; }
+    if (f.website.value || Date.now() - opened < 2500) { err.textContent = "Please take a moment, then send again."; return; }
+    err.textContent = "";
+    var data = { placeId: p.id, field: f.field.value, message: msg, contact: f.contact.value.trim().slice(0, 100) || null, at: new Date().toISOString() };
+    document.getElementById("rep-send").disabled = true;
+    save("reports", data).then(function () { out.innerHTML = '<div class="note info" role="status"><b>Thank you.</b> Your report was saved. We check the source before changing anything.</div>'; })
+      .catch(function () { document.getElementById("rep-send").disabled = false; out.innerHTML = '<div class="note" role="status">We could not save the report here (you may be viewing without sign-in). Copy this and send it to the founder:<pre class="sample" style="white-space:pre-wrap"></pre></div>'; out.querySelector("pre").textContent = JSON.stringify(data, null, 1); });
+  };
+}
+
+/* ---------- router ---------- */
+function route() { return (location.hash || "#home").slice(1) || "home"; }
+function render() {
+  var r = route(), html, bind = null;
+  if (r === "home") html = viewHome();
+  else if (r === "plan") { html = viewPlan(); bind = bindPlan; }
+  else if (r === "itinerary") { html = viewItinerary(); bind = bindItinerary; }
+  else if (r === "places") { html = viewPlaces(); bind = bindPlaces; }
+  else if (r === "data") html = viewData();
+  else if (r === "about") html = viewAbout();
+  else if (r === "privacy") html = viewPrivacy();
+  else if (r === "survey") { html = viewSurvey(); bind = bindSurvey; }
+  else if (r === "admin") { html = viewAdmin(); bind = bindAdmin; }
+  else if (byId[r]) html = viewPlace(byId[r]);
+  else html = '<div class="stack"><h1>Page not found</h1><p><a href="#home">Go to the start</a></p></div>';
+  app.innerHTML = html;
+  [].forEach.call(document.querySelectorAll("[data-nav]"), function (a) { var n = a.getAttribute("data-nav"); if (n === r || (n === "places" && byId[r]) || (n === "plan" && r === "itinerary")) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  if (bind) bind();
+}
+app.addEventListener("click", function (e) {
+  var d = e.target.closest("[data-driver]"); if (d) { openDriver(d.getAttribute("data-driver")); return; }
+  var rp = e.target.closest("[data-report]"); if (rp) openReport(rp.getAttribute("data-report"));
+});
+var prevRoute = route();
+window.addEventListener("hashchange", function () { var r = route(); if (r === "plan" && prevRoute !== "plan") state.step = 1; prevRoute = r; render(); window.scrollTo(0, 0); app.focus({ preventScroll: true }); });
+render();
+})();
+</script>
